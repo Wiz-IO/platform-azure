@@ -28,11 +28,12 @@
   "packages": {
     "framework-azure": {
         "type": "framework",
-        "version": "1"
+        "version": "https://github.com/Wiz-IO/platform-azure.git"
     },
     "toolchain-arm-poky-linux-musleabi-hf": {
       "type": "toolchain",
       "version": "=1.0.0"
+      "optional": true
     },
     "tool-azure": {
       "type": "uploader",

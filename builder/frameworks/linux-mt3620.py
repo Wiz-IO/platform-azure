@@ -6,7 +6,6 @@ import os
 from os.path import join
 from shutil import copyfile
 from SCons.Script import ARGUMENTS, DefaultEnvironment, Builder
-
 from subprocess import check_output, CalledProcessError, call
 import tempfile
 import json
@@ -26,7 +25,6 @@ def dev_copy_json(env):
     src = join(env.subst("$PROJECT_DIR"), "src", "app_manifest.json")
     dst = join(env.subst("$BUILD_DIR"), "app_manifest.json")
     copyfile(src, dst)
-
     tool_dir = env.PioPlatform().get_package_dir("tool-azure")
     uuid = get_uuid( join(tool_dir, "uuidgen-64") ) # or 32 
     with open(dst, 'r+') as f:
@@ -42,13 +40,10 @@ def dev_pack_image(target, source, env):
         os.remove(join(env.subst("$BUILD_DIR"), "program.img"))
     except:    
         pass
-
     dev_copy_json(env)
-
     cmd = []
     tool_dir = env.PioPlatform().get_package_dir("tool-azure")
     dst = join(env.subst("$BUILD_DIR"), "app_manifest.json")
-    
     cmd.append( join(tool_dir, "azsphere") ) 
     cmd.append("image")
     cmd.append("package-application")
@@ -61,7 +56,6 @@ def dev_pack_image(target, source, env):
     #cmd.append("--verbose")
     cmd.append("--hardwaredefinition")
     cmd.append( join(env.subst("$PROJECT_DIR"), "src", "hardware.json") ) 
-
     t = tempfile.TemporaryFile()
     try:
         output = check_output(cmd, stderr=t.seek(0))
@@ -80,7 +74,13 @@ def dev_uploader(target, source, env):
     return
 
 def dev_create_template(env):
-    return
+    src = join(env.PioPlatform().get_package_dir("framework-azure"), "templates")
+    print "TEMPLATES", src
+    F = [ "main.c", "app_manifest.json", "hardware.json", "epoll_timerfd_utilities.c", "epoll_timerfd_utilities.h" ]
+    for I in F:
+        dst = join( env.subst("$PROJECT_DIR"), "src", I)
+        if False == os.path.isfile( dst ):
+            copyfile(join(src, I), dst)
 
 def dev_compiler_poky(env):
     env.Replace(
@@ -101,14 +101,11 @@ def dev_compiler_poky(env):
         PROGSUFFIX=".elf",  
     )       
 
-
 def dev_init(env, platform):
     dev_create_template(env)
     dev_compiler_poky(env)
     framework_dir = env.PioPlatform().get_package_dir("framework-azure")
-
     gcc_dir = env.PioPlatform().get_package_dir("toolchain-arm-poky-linux-musleabi-hf")
-
     env.sysroot = env.BoardConfig().get("build.sysroot", "2") # INI file, default is 2 
     print '\033[1;34;40m'+"AZURE SPHERE SDK Sysroot:", env.sysroot
     env.Append(
@@ -155,9 +152,7 @@ def dev_init(env, platform):
         ), 
         UPLOADCMD = dev_uploader
     )
-
     libs = []    
-    #PROJECT
     libs.append(
         env.BuildLibrary(
             join("$BUILD_DIR", "_custom"), 

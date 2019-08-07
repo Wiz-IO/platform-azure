@@ -1,0 +1,47 @@
+{
+  "name": "azure",
+  "title": "Azure Sphere",
+  "description": "Azure Sphere Development PlatformIO 2019 Georgi Angelov",
+  "url": "https://github.com/Wiz-IO",
+  "homepage": "http://www.wizio.eu/",
+  "license": "Apache-2.0",
+  "engines": { "platformio": "^3.0.0" },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "version": "1.0.0",
+  "packageRepositories": [
+    "https://dl.bintray.com/platformio/dl-packages/manifest.json",
+    "http://dl.platformio.org/packages/manifest.json"
+  ],
+  "frameworks": {
+      "arduino": {
+        "package": "framework-azure",
+        "script": "builder/frameworks/arduino.py"
+      },   
+      "linux": {
+        "package": "framework-azure",
+        "script": "builder/frameworks/linux.py"
+      }       
+  },
+  "packages": {
+    "framework-azure": {
+        "type": "framework",
+        "version": "1"
+    },
+    "toolchain-gccarmlinuxgnueabihf": {
+        "type": "Xtoolchain",
+        "version": "=7.2.1"
+    },
+    "toolchain-arm-poky-linux-musleabi-hf": {
+      "type": "toolchain",
+      "version": "=1.0.0"
+    },
+    "tool-azure": {
+      "type": "uploader",
+      "version": "=1.0.0",
+      "optional": true
+    }        
+  }
+}

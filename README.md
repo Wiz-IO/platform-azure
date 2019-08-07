@@ -5,7 +5,7 @@ Azure Sphere SDK for PlatformIO
 
 Installation ( at the begining will be manually, I need 150M bytes "cloud" )
 
-* Goto C:\Users\NAME\.platformio folder
+* Goto C: \ Users \ NAME \ .platformio folder
 
 
 

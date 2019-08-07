@@ -1,4 +1,4 @@
-# platform-azure
+# Azure Sphere for PlatformIO
 Azure Sphere SDK for PlatformIO
 
 ## is not ready yet ... do not install !!! ##

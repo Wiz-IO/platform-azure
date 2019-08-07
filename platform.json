@@ -30,10 +30,6 @@
         "type": "framework",
         "version": "1"
     },
-    "toolchain-gccarmlinuxgnueabihf": {
-        "type": "Xtoolchain",
-        "version": "=7.2.1"
-    },
     "toolchain-arm-poky-linux-musleabi-hf": {
       "type": "toolchain",
       "version": "=1.0.0"

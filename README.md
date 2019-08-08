@@ -8,7 +8,8 @@ it's almost done... I have only one problem - Uploader - Microsoft use "TAP-Wind
 I install driver manually but I dont know how to config to work with the board 
 
 
-## Installation ## ( at the begining will be manually, I need 150M bytes "cloud" )
+## Installation
+( at the begining will be manually, I need 150M bytes "cloud" )
 
 
 

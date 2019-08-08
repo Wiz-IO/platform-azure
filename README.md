@@ -11,6 +11,8 @@ and at this moment you need full ( 3Gb ) VS + Azure SDK installation...
 
 If someone ( Microsoft, Avnet, Seed, Element14... ) help - full installation not need
 
+[Demo movie](https://www.youtube.com/watch?v=tIwjUzBBPTg)
+
 ## Microsoft ADD Accaunt
 
 You need email at hotmail.com or ... or account at Microsoft
@@ -25,11 +27,13 @@ Name: Your Name ( does not matter )
 
 User name: azure[@]wiziohotmail.onMicrosoft.com ( azure@ as your preferences, **wiziohotmail** as your email )
 
-CREATE User
+Create User
 
 Select this user -> Directory role -> ADD -> **Global administrator**
 
-That is all... Test: 
+That is all... 
+
+Lets test: 
 
 **azsphere login**
 
@@ -60,9 +64,13 @@ OPEN: 'src/app_manifest.json' and enter your 'Capabilities'
 
 Build, Upload ... if uploader work - nice ... enjoy
 
+## Manual upload
 
+**azsphere device sideload delete** delete old
 
-**IF YOU WANT HELP - CONNECT ME**
+**azsphere device sideload deploy --imagepackage PATH-TO-PROJECT\NAME\.pio\build\VARIANT\app.image**
+
+## IF YOU WANT HELP - CONNECT ME
 
 ## Thanks to:
 * [Ivan Kravets ( PlatformIO )](https://platformio.org/)

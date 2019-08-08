@@ -6,7 +6,7 @@ import os
 from os.path import join
 from shutil import copyfile
 from SCons.Script import ARGUMENTS, DefaultEnvironment, Builder
-from subprocess import check_output, CalledProcessError, call
+from subprocess import check_output, CalledProcessError, call, Popen, PIPE
 import tempfile
 import json
 
@@ -17,29 +17,40 @@ def get_uuid(path):
     except CalledProcessError as e:
         result = e.returncode, t.read()
     else:
-        result = 0, output
-        print '\nUUID: ' + result[1]
-    return result[1].replace("\r\n", "") 
+        result = 0, output.replace("\r\n", "")
+        print '\nUUID: ' + result[1].upper()
+    return result[1]
 
 def dev_copy_json(env):
     src = join(env.subst("$PROJECT_DIR"), "src", "app_manifest.json")
     dst = join(env.subst("$BUILD_DIR"), "app_manifest.json")
     copyfile(src, dst)
-    tool_dir = env.PioPlatform().get_package_dir("tool-azure")
-    uuid = get_uuid( join(tool_dir, "uuidgen-64") ) # or 32 
+    uuid = get_uuid( join(env.PioPlatform().get_package_dir("tool-azure"), "uuidgen-64") ) # or 32 
     with open(dst, 'r+') as f:
         data = json.load(f)
-        data['ComponentId'] = uuid          # change this
-        data['EntryPoint'] = "program.elf"  # change this
+        data['ComponentId'] = uuid              # change this
+        data['Name'] = "PlatformIO_Application" # change this ProjectName
+        data['EntryPoint'] = "/bin/app"         # change this
         f.seek(0)        
         json.dump(data, f, indent=4)
         f.truncate()  
 
 def dev_pack_image(target, source, env):
-    try:
-        os.remove(join(env.subst("$BUILD_DIR"), "program.img"))
-    except:    
-        pass
+    bin = join(env.subst("$BUILD_DIR"), "bin")
+
+    try:    os.remove(join(env.subst("$BUILD_DIR"), "app.image"))
+    except: pass
+
+    try:    os.remove(join(bin, "app"))
+    except: pass   
+
+    try:    os.remove(bin)     
+    except: pass
+   
+    if False == os.path.isdir(bin):    
+        os.makedirs(bin)    
+    copyfile(join(env.subst("$BUILD_DIR"), "app.elf"), join(bin, "app"))
+
     dev_copy_json(env)
     cmd = []
     tool_dir = env.PioPlatform().get_package_dir("tool-azure")
@@ -50,12 +61,12 @@ def dev_pack_image(target, source, env):
     cmd.append("--input")
     cmd.append( env.subst("$BUILD_DIR") ) 
     cmd.append("--output")
-    cmd.append( join(env.subst("$BUILD_DIR"), "program.img") ) # "manual.imagepackage" 
+    cmd.append( join(env.subst("$BUILD_DIR"), "app.image") ) # "manual.imagepackage" 
     cmd.append("--sysroot")
     cmd.append( env.sysroot )
     #cmd.append("--verbose")
     cmd.append("--hardwaredefinition")
-    cmd.append( join(env.subst("$PROJECT_DIR"), "src", "hardware.json") ) 
+    cmd.append( join(env.subst("$PROJECT_DIR"), "src", env.BoardConfig().get("build.variant") + ".json") ) 
     t = tempfile.TemporaryFile()
     try:
         output = check_output(cmd, stderr=t.seek(0))
@@ -64,23 +75,61 @@ def dev_pack_image(target, source, env):
         print'Pack ERROR: ', result[0], result[1]
     else:
         result = 0, output
-        print('\033[1;32;40m'+'Pack Image ' + result[1])    
+        print('\033[1;32;40m'+'PACK ' + result[1])    
     return
 
-
+def get_exitcode_stdout_stderr(cmd):
+    proc = Popen(cmd, stdout=PIPE, stderr=PIPE)
+    out, err = proc.communicate()
+    exitcode = proc.returncode
+    return exitcode, out, err
+    
 def dev_uploader(target, source, env):
-    #azsphere device sideload delete
-    #azsphere device sideload deploy --imagepackage manual.imagepackage
-    return
+    tool_dir = env.PioPlatform().get_package_dir("tool-azure")
+    cmd = []
+    cmd.append( join(tool_dir, "azsphere") ) 
+    cmd.append("device")
+    cmd.append("sideload")
+    cmd.append("delete")
+    exitcode, out, err = get_exitcode_stdout_stderr(cmd)
+    if (0 == exitcode):
+        print '\033[1;32;40m'+'DELETED'
+    else:
+        print '\033[91mERROR', exitcode, "\n", out, err
+
+    cmd = []        
+    cmd.append( join(tool_dir, "azsphere") ) 
+    cmd.append("device")
+    cmd.append("sideload")
+    cmd.append("deploy")
+    cmd.append("--imagepackage")
+    cmd.append(join(env.subst("$BUILD_DIR"), "app.image"))
+    exitcode, out, err = get_exitcode_stdout_stderr(cmd)
+    if (0 == exitcode):
+        print '\033[1;32;40m'+'UPLOADED'
+    else:
+        print '\033[91mERROR', exitcode, "\n", out, err    
 
 def dev_create_template(env):
-    src = join(env.PioPlatform().get_package_dir("framework-azure"), "templates")
-    print "TEMPLATES", src
-    F = [ "main.c", "app_manifest.json", "hardware.json", "epoll_timerfd_utilities.c", "epoll_timerfd_utilities.h" ]
-    for I in F:
-        dst = join( env.subst("$PROJECT_DIR"), "src", I)
+    framework = env.PioPlatform().get_package_dir("framework-azure")
+    hardwares = join(framework, "Hardwares")
+    templates = join(framework, "Templates")
+    core = env.BoardConfig().get("build.variant")
+    print "TEMPLATES", templates 
+    F = [ 
+        join(templates, "main.c"), 
+        join(templates, "app_manifest.json"),  
+        join(templates, "epoll_timerfd_utilities.c"), 
+        join(templates, "epoll_timerfd_utilities.h"),
+        join(templates, "applibs_versions.h"),
+        join(hardwares, "json", core + ".json"),
+        join(hardwares, "inc", core + ".h")
+    ]
+    for src in F:
+        head, fname = os.path.split(src)
+        dst = join( env.subst("$PROJECT_DIR"), "src", fname)        
         if False == os.path.isfile( dst ):
-            copyfile(join(src, I), dst)
+            copyfile(src, dst)
 
 def dev_compiler_poky(env):
     env.Replace(
@@ -98,6 +147,7 @@ def dev_compiler_poky(env):
         SIZEDATAREGEXP=r"^(?:\.data|\.bss|\.noinit)\s+(\d+).*",
         SIZECHECKCMD="$SIZETOOL -A -d $SOURCES",
         SIZEPRINTCMD='$SIZETOOL --mcu=$BOARD_MCU -C -d $SOURCES',
+        PROGNAME="app",
         PROGSUFFIX=".elf",  
     )       
 
@@ -107,7 +157,7 @@ def dev_init(env, platform):
     framework_dir = env.PioPlatform().get_package_dir("framework-azure")
     gcc_dir = env.PioPlatform().get_package_dir("toolchain-arm-poky-linux-musleabi-hf")
     env.sysroot = env.BoardConfig().get("build.sysroot", "2") # INI file, default is 2 
-    print '\033[1;34;40m'+"AZURE SPHERE SDK Sysroot:", env.sysroot
+    print '\033[1;34;40m'+"AZURE SPHERE SDK SYSROOT:", env.sysroot, "[",env.BoardConfig().get("build.core").upper(),"]", env.BoardConfig().get("build.variant")
     env.Append(
         CPPDEFINES = [ "_POSIX_C_SOURCE" ],        
         CPPPATH = [ 

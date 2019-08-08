@@ -2,7 +2,7 @@
   "name": "Azure Sphere MT3620",
   "url": "https://www.avnet.com",
   "build": {
-    "core": "mt3620",
+    "core": "MT3620",
     "f_cpu": "500000000L",
     "mcu": "ARM, MT3620",
     "variant": "mt3620"

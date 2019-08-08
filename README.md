@@ -48,7 +48,7 @@ PlatformIO - Home - Platforms - Advanced Installation
 
 PASTE: https://github.com/Wiz-IO/platform-azure
 
-PlatformIO - **New Project**
+## New Project - PlatformIO
 
 enter Project Name - search 'azure' - select Linux - Create
 
@@ -62,7 +62,12 @@ Build, Upload ... if uploader work - nice ... enjoy
 
 
 
-IF YOU WANT HELP - CONNECT ME...
+**IF YOU WANT HELP - CONNECT ME**
+
+## Thanks to:
+* [Ivan Kravets ( PlatformIO )](https://platformio.org/)
+* [Comet electronics](https://www.comet.bg/?cid=111)
+* your name
 
 
 ![Project](https://raw.githubusercontent.com/Wiz-IO/LIB/master/images/azure.png) 

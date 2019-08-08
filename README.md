@@ -48,17 +48,17 @@ PlatformIO - Home - Platforms - Advanced Installation
 
 PASTE: https://github.com/Wiz-IO/platform-azure
 
-PlatformIO - New Project
+PlatformIO - **New Project**
 
-Name - search 'azure' - select Linux
+enter Project Name - search 'azure' - select Linux - Create
 
-Build, after this you will have template Project
+**Build** after this you will have basic template project
 
 OPEN: 'platformio.ini' and edit your settings
 
 OPEN: 'src/app_manifest.json' and enter your 'Capabilities'
 
-Build, Upload ... if uploader work - nice ...
+Build, Upload ... if uploader work - nice ... enjoy
 
 
 

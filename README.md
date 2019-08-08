@@ -50,7 +50,7 @@ Install VS Code + PlatformIO
 
 PlatformIO - Home - Platforms - Advanced Installation
 
-Paste: https://github.com/Wiz-IO/platform-azure ( look big text at the begining )
+Paste: https://github.com/Wiz-IO/platform-azure ( look the big text at the begining )
 
 ## New Project - PlatformIO
 

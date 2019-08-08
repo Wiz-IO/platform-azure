@@ -11,7 +11,7 @@ I install driver manually but I dont know how to config to work with the board
 
 You need email at hotmail.com or ... account at microsoft
 
-Example: wizio@hotmail.com
+Example: wizio[@]hotmail.com
 
 goto Azure Portal -> Azure Active Directory -> Users -> New user
 
@@ -19,7 +19,7 @@ enter ....
 
 Name: Your Name
 
-User name: azure@wiziohotmail.onMicrosoft.com ( azure@ as your preferences, wiziohotmail as your email )
+User name: azure[@]wiziohotmail.onMicrosoft.com ( azure@ as your preferences, wiziohotmail as your email )
 
 CREATE USER
 

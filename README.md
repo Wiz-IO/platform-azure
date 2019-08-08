@@ -7,7 +7,7 @@ it's almost done... I have only one problem - Uploader - Microsoft use "TAP-Wind
 
 I install driver manually but I dont know how to config to work with the board 
 
-## ADD Accaunt
+## Microsoft ADD Accaunt
 
 You need email at hotmail.com or ... account at microsoft
 
@@ -19,11 +19,17 @@ enter ....
 
 Name: Your Name
 
-User name: azure[@]wiziohotmail.onMicrosoft.com ( azure@ as your preferences, wiziohotmail as your email )
+User name: azure[@]wiziohotmail.onMicrosoft.com ( azure@ as your preferences, **wiziohotmail** as your email )
 
-CREATE USER
+CREATE User
 
-Select this user: Directory role -> ADD -> Global administrator
+Select this user -> Directory role -> ADD -> **Global administrator**
+
+That is all... Test: 
+**azsphere login**
+**azsphere dev show-attached** Show the details of the attached device
+**azsphere dev recover** For device update
+**azsphere prep-debug** Set up a device for local debugging
 
 ## Installation
 ( at the begining will be manually, I need 150M bytes "cloud" )

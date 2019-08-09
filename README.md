@@ -3,15 +3,14 @@ Azure Sphere SDK for PlatformIO
 
 ## is not ready yet ... do not install !!! ##
 
-it's almost done... I have only one problem - Uploader - Microsoft use "TAP-Windows Provider V9" 
+it's almost done ... NICE I found solution with **uploader** and I will update soon all + Arduino port
 
-I install driver manually but I dont know how to config to work with the board 
 
-and at this moment you need full ( 3Gb ) VS + Azure SDK installation...
+[Demo movie Arduino](https://www.youtube.com/watch?v=bPYGXtNt8fg)
 
-If someone ( Microsoft, Avnet, Seed, Element14... ) help - full installation not need
+[Demo movie Linux](https://www.youtube.com/watch?v=tIwjUzBBPTg)
 
-[Demo movie](https://www.youtube.com/watch?v=tIwjUzBBPTg)
+
 
 ## Azure AD Accaunt
 

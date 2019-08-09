@@ -43,7 +43,7 @@ Lets test:
 **azsphere prep-debug** Set up a device for local debugging
 
 ## Installation
-( I need 150Mb "cloud" for compiler and tools )
+( I need ... 60Mb "cloud" for zip compiler and tools )
 
 Install VS Code + PlatformIO
 

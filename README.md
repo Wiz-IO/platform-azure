@@ -13,7 +13,7 @@ If someone ( Microsoft, Avnet, Seed, Element14... ) help - full installation not
 
 [Demo movie](https://www.youtube.com/watch?v=tIwjUzBBPTg)
 
-## Microsoft ADD Accaunt
+## Azure AD Accaunt
 
 You need email at hotmail.com or ... or account at Microsoft
 

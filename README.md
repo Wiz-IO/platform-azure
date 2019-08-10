@@ -1,15 +1,15 @@
-# Azure Sphere for PlatformIO
-Azure Sphere SDK for PlatformIO
+# Azure Sphere - PlatformIO
+Support Linux ( HighLevelApp ) and Arduino applications
 
 ## is not ready yet ... do not install !!! ##
 
-it's almost done ... NICE I found solution with **uploader** and I will update soon all + Arduino port
+It's almost done ... I will update soon all
 
+[Youtube Arduino Blink](https://www.youtube.com/watch?v=bPYGXtNt8fg)
 
-[Demo movie Arduino](https://www.youtube.com/watch?v=bPYGXtNt8fg)
+[Youtube Arduino PubSub](https://www.youtube.com/watch?v=-hhSmKoT8T0)
 
-[Demo movie Linux](https://www.youtube.com/watch?v=tIwjUzBBPTg)
-
+[Youtube Linux](https://www.youtube.com/watch?v=tIwjUzBBPTg)
 
 ## [INSTALL NOTES - READ](https://github.com/Wiz-IO/platform-azure/wiki/Install-Notes)
 

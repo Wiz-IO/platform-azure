@@ -27,18 +27,16 @@ Paste link: https://github.com/Wiz-IO/platform-azure
 PlatformIO - Home - New
 * enter Project Name - Board write-search '**azure**' - Select **Linux** or **Arduino** 
 * you will have basic template project
-* Open 'platformio.ini' and edit your settings
 * Open 'src/app_manifest.json' and enter your 'Capabilities'
-
+* Open 'platformio.ini' and edit your settings
+* INI example:
 ```ini
 [env:avnet_aesms_mt3620]
 platform = azure
 board = avnet_aesms_mt3620
 framework = arduino
-
 monitor_port = COM6
 monitor_speed = 115200
-
 ;build_flags = -D MQTT_MAX_PACKET_SIZE=1024 -D MQTT_KEEPALIVE=60 ; any other
 ```
 

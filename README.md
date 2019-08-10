@@ -1,5 +1,5 @@
 # Azure Sphere - PlatformIO
-Support Linux ( HighLevelApp ) and Arduino applications
+Support Linux ( HighLevelApp ) and Arduino applications ... OS Windows 10 (preferably)
 
 ## is not ready yet ... do not install !!! ##
 

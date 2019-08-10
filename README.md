@@ -13,11 +13,10 @@ it's almost done ... NICE I found solution with **uploader** and I will update s
 
 ## [INSTALL NOTES - READ](https://github.com/Wiz-IO/platform-azure/wiki/Install-Notes)
 
-
-## Installation
+## Platform Installation
 ( comming soon )
 
-Install VS Code + PlatformIO + Git
+Install VS Code + PlatformIO
 
 PlatformIO - Home - Platforms - Advanced Installation
 
@@ -27,12 +26,9 @@ Paste link: https://github.com/Wiz-IO/platform-azure ( look the big text at the 
 
 PlatformIO - Home - New
 * enter Project Name - search 'azure' - select Linux or Arduino - Create
-
-You will have basic template project
-
-OPEN: 'platformio.ini' and edit your settings
-
-OPEN: 'src/app_manifest.json' and enter your 'Capabilities'
+* you will have basic template project
+* Open 'platformio.ini' and edit your settings
+* Open 'src/app_manifest.json' and enter your 'Capabilities'
 
 Build, Upload ... if uploader work ( tested on Windows 10 ) - nice ... enjoy
 
@@ -43,6 +39,7 @@ Build, Upload ... if uploader work ( tested on Windows 10 ) - nice ... enjoy
 **azsphere device sideload deploy --imagepackage PATH-TO-PROJECT\NAME\.pio\build\VARIANT\app.image**
 
 ## IF YOU WANT HELP / SUPPORT - CONNECT ME
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ESUP9LCZMZTD6)
 
 ## Thanks to:
 * [Ivan Kravets ( PlatformIO )](https://platformio.org/)

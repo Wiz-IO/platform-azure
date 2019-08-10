@@ -14,18 +14,18 @@ it's almost done ... NICE I found solution with **uploader** and I will update s
 ## [INSTALL NOTES - READ](https://github.com/Wiz-IO/platform-azure/wiki/Install-Notes)
 
 ## Platform Installation
-( comming soon )
+( comming soon, look the big text at the begining )
 
 Install VS Code + PlatformIO
 
 PlatformIO - Home - Platforms - Advanced Installation
 
-Paste link: https://github.com/Wiz-IO/platform-azure ( look the big text at the begining )
+Paste link: https://github.com/Wiz-IO/platform-azure 
 
 ## New Project - PlatformIO
 
 PlatformIO - Home - New
-* enter Project Name - search 'azure' - select Linux or Arduino - Create
+* enter Project Name - search 'azure' - select Linux or Arduino 
 * you will have basic template project
 * Open 'platformio.ini' and edit your settings
 * Open 'src/app_manifest.json' and enter your 'Capabilities'

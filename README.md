@@ -11,57 +11,30 @@ it's almost done ... NICE I found solution with **uploader** and I will update s
 [Demo movie Linux](https://www.youtube.com/watch?v=tIwjUzBBPTg)
 
 
+## [INSTALL NOTES - READ](https://github.com/Wiz-IO/platform-azure/wiki/Install-Notes)
 
-## Azure AD Accaunt
-
-You need email at hotmail.com or ... or account at Microsoft
-
-Example: **wizio[@]hotmail.com**
-
-goto **Azure Portal** -> Azure Active Directory -> Users -> **New user**
-
-Enter:
-
-Name: Your Name ( does not matter )
-
-User name: azure[@]wiziohotmail.onMicrosoft.com ( azure@ as your preferences, **wiziohotmail** as your email )
-
-Create User
-
-Select this user -> Directory role -> ADD -> **Global administrator**
-
-That is all... 
-
-Lets test: 
-
-**azsphere login**
-
-**azsphere dev show-attached** Show the details of the attached device
-
-**azsphere dev recover** For device update
-
-**azsphere prep-debug** Set up a device for local debugging
 
 ## Installation
-( I need ... 60Mb "cloud" for zip compiler and tools )
+( comming soon )
 
-Install VS Code + PlatformIO
+Install VS Code + PlatformIO + Git
 
 PlatformIO - Home - Platforms - Advanced Installation
 
-Paste: https://github.com/Wiz-IO/platform-azure ( look the big text at the begining )
+Paste link: https://github.com/Wiz-IO/platform-azure ( look the big text at the begining )
 
 ## New Project - PlatformIO
 
-enter Project Name - search 'azure' - select Linux - Create
+PlatformIO - Home - New
+* enter Project Name - search 'azure' - select Linux or Arduino - Create
 
-**Build** after this you will have basic template project
+You will have basic template project
 
 OPEN: 'platformio.ini' and edit your settings
 
 OPEN: 'src/app_manifest.json' and enter your 'Capabilities'
 
-Build, Upload ... if uploader work - nice ... enjoy
+Build, Upload ... if uploader work ( tested on Windows 10 ) - nice ... enjoy
 
 ## Manual upload
 
@@ -69,7 +42,7 @@ Build, Upload ... if uploader work - nice ... enjoy
 
 **azsphere device sideload deploy --imagepackage PATH-TO-PROJECT\NAME\.pio\build\VARIANT\app.image**
 
-## IF YOU WANT HELP - CONNECT ME
+## IF YOU WANT HELP / SUPPORT - CONNECT ME
 
 ## Thanks to:
 * [Ivan Kravets ( PlatformIO )](https://platformio.org/)

@@ -16,7 +16,8 @@
 * As original [SDK](https://docs.microsoft.com/en-us/azure-sphere/) 
 * [Examples](https://github.com/Azure/azure-sphere-samples)
 
-**Tested Board** [Azure Sphere MT3620 Starter AES-MS-MT3620-SK-G by Avnet](https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-ms-mt3620-sk-g-3074457345636825680/)
+**Tested Boards** 
+* [Azure Sphere MT3620 Starter AES-MS-MT3620-SK-G by Avnet](https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-ms-mt3620-sk-g-3074457345636825680/)
 
 **Demo movies**
 * [Youtube Arduino Blink](https://www.youtube.com/watch?v=bPYGXtNt8fg)

@@ -125,3 +125,4 @@ def dev_compiler_poky(env):
         PROGNAME="app",
         PROGSUFFIX=".elf",  
     )      
+    env.Append(UPLOAD_PORT='azsphere') #upload_port = "must exist variable"

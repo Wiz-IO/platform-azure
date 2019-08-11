@@ -1,9 +1,9 @@
 # Azure Sphere - PlatformIO
-Support Linux ( HighLevelApp ) and Arduino applications ... OS Windows 10 (preferably)
+* OS Windows 10 (preferably), GCC can compile for Unix, but not have tools
+* * Arduino applications
+* * Linux HighLevel applications
+* It is very beta version - may be bugs yet 
 
-## is not ready yet ... do not install !!! ##
-
-It's almost done ... I will update soon all
 
 [Youtube Arduino Blink](https://www.youtube.com/watch?v=bPYGXtNt8fg)
 
@@ -14,7 +14,6 @@ It's almost done ... I will update soon all
 ## [INSTALL NOTES - READ](https://github.com/Wiz-IO/platform-azure/wiki/Install-Notes)
 
 ## Platform Installation
-( comming soon, look the big text at the begining )
 
 Install VS Code + PlatformIO
 

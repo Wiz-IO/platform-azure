@@ -8,7 +8,7 @@
   "engines": { "platformio": "^3.0.0" },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/Wiz-IO/platform-azure.git"
   },
   "version": "1.0.0",
   "packageRepositories": [

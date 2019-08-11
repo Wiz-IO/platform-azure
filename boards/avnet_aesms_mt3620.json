@@ -1,11 +1,11 @@
 {
-  "name": "Azure Sphere MT3620",
-  "url": "https://www.avnet.com",
+  "name": "Azure Sphere AES-MS-MT3620-SK-G",
+  "url": "https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-ms-mt3620-sk-g-3074457345636825680/",
   "build": {
     "core": "MT3620",
     "f_cpu": "500000000L",
     "mcu": "ARM, MT3620",
-    "variant": "mt3620"
+    "variant": "avnet_aesms_mt3620"
   },
   "debug": {
     "tools": {

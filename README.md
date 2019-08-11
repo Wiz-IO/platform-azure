@@ -27,7 +27,7 @@
 **Documentations, Support, Forums**
 * [Azure Sphere Documentation](https://docs.microsoft.com/en-us/azure-sphere/)
 * [MSDN Azure Sphere forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azuresphere)
-* [AVNET](https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-ms-mt3620-sk-g-3074457345636825680/)
+* [AVNET](http://cloudconnectkits.org/product/azure-sphere-starter-kit)
 * [Element14](https://www.element14.com/community/community/designcenter/azure-sphere-starter-kits/)
 * I not have contact with supports...
 

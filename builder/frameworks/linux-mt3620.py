@@ -69,7 +69,7 @@ def dev_init(env, platform):
             "-Wl,--no-undefined", 
         ],  
         LIBSOURCE_DIRS=[ join(env.framework_dir, platform, "libraries"), ],        
-        LIBS = [ "applibs", "pthread", "gcc_s", "c"],               
+        LIBS = [ "applibs", "pthread", "gcc_s", "curl", "c"],               
         BUILDERS = dict(
             ElfToBin = Builder(action="", suffix=".1"),
             MakeHeader = Builder( 

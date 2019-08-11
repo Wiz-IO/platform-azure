@@ -23,6 +23,13 @@
 * [Youtube Arduino PubSub](https://www.youtube.com/watch?v=-hhSmKoT8T0)
 * [Youtube Linux](https://www.youtube.com/watch?v=tIwjUzBBPTg)
 
+**Documentations, Support, Forums**
+* [Microsoft]()
+* [MSDN](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azuresphere)
+* [AVNET](https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-ms-mt3620-sk-g-3074457345636825680/)
+* [Element 14](https://www.element14.com/community/community/designcenter/azure-sphere-starter-kits/)
+* I not have contact with supports...
+
 ## [INSTALL NOTES - READ](https://github.com/Wiz-IO/platform-azure/wiki/Install-Notes)
 
 ## Platform Installation

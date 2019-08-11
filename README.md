@@ -27,8 +27,8 @@
 **Documentations, Support, Forums**
 * [Azure Sphere Documentation](https://docs.microsoft.com/en-us/azure-sphere/)
 * [MSDN Azure Sphere forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azuresphere)
-* [AVNET](http://cloudconnectkits.org/product/azure-sphere-starter-kit)
-* [Element14](https://www.element14.com/community/community/designcenter/azure-sphere-starter-kits/)
+* [AVNET Azure Sphere MT3620 Starter Kit](http://cloudconnectkits.org/product/azure-sphere-starter-kit)
+* [Element14 Azure Sphere MT3620 Starter Kit](https://www.element14.com/community/community/designcenter/azure-sphere-starter-kits/)
 * I not have contact with supports...
 
 ## [INSTALL NOTES - READ](https://github.com/Wiz-IO/platform-azure/wiki/Install-Notes)

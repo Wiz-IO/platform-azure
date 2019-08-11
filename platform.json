@@ -33,12 +33,10 @@
     "toolchain-arm-poky-linux-musleabi-hf": {
       "type": "toolchain",
       "version": "http://wizio.eu/azure/toolchain-arm-poky-linux-musleabi-hf-1.0.0.zip",
-      "optional": true
     },
     "tool-azure": {
       "type": "uploader",
       "version": "https://github.com/Wiz-IO/tool-azure.git",
-      "optional": true
     }        
   }
 }

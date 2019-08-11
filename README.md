@@ -5,16 +5,18 @@
 * * Not support BareMetal
 * It is very beta version - **may be bugs yet** 
 
-Arduino stage:
-* Arduino base core
+**Arduino stage**
+* Arduino base core ( sources from last Arduino IDE )
 * HardwareSerial
 * GPIO
 * wifiClient ( TCP )
-* other in proggress
+* other in proggress...
 
-Linux stage: as original 
+**Linux stage** 
+* As original [SDK](https://docs.microsoft.com/en-us/azure-sphere/) 
+* [examples](https://github.com/Azure/azure-sphere-samples)
 
-Tested Board: [Azure Sphere MT3620 Starter AES-MS-MT3620-SK-G by Avnet](https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-ms-mt3620-sk-g-3074457345636825680/)
+**Tested Board** [Azure Sphere MT3620 Starter AES-MS-MT3620-SK-G by Avnet](https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-ms-mt3620-sk-g-3074457345636825680/)
 
 [Youtube Arduino Blink](https://www.youtube.com/watch?v=bPYGXtNt8fg)
 

@@ -26,7 +26,7 @@
 * [Youtube Arduino PubSub](https://www.youtube.com/watch?v=-hhSmKoT8T0)
 * [Youtube Linux](https://www.youtube.com/watch?v=tIwjUzBBPTg)
 
-![Project](https://raw.githubusercontent.com/Wiz-IO/LIB/master/images/azuresphere.png) 
+![Project](https://raw.githubusercontent.com/Wiz-IO/LIB/master/images/azuresphere.jpg) 
 
 **Documentations, Support, Forums**
 * [Azure Sphere Documentation](https://docs.microsoft.com/en-us/azure-sphere/)

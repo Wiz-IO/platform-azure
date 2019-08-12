@@ -10,6 +10,7 @@
 * Arduino base core ( sources from last Arduino IDE )
 * HardwareSerial
 * GPIO
+* Wire (**NEW**)
 * wifiClient
 * curlClient (**NEW**)
 * other in proggress...

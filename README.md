@@ -6,7 +6,7 @@
 * * Not support BareMetal
 * It is very beta version - **may be bugs yet** 
 
-**Arduino stage**
+**Arduino part**
 * Arduino base core ( sources from last Arduino IDE )
 * HardwareSerial
 * GPIO
@@ -16,7 +16,7 @@
 * other in proggress...
 * [Examples](https://github.com/Wiz-IO/platform-azure/tree/master/Examples)
 
-**Linux stage** 
+**Linux part** 
 * As original [SDK](https://docs.microsoft.com/en-us/azure-sphere/) 
 * [Examples](https://github.com/Azure/azure-sphere-samples)
 

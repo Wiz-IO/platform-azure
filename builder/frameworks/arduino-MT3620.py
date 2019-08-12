@@ -33,7 +33,8 @@ def dev_init(env, platform):
     env.Append(
         CPPDEFINES = [ 
             "_POSIX_C_SOURCE", 
-            "{}=200".format(platform.upper()), 
+            "{}=200".format(platform.upper()),
+            "SYSROOT_" + env.sysroot.upper().replace("+", "_"), # -DSYSROOT_X
         ],        
         CPPPATH = [ 
             join(env.framework_dir,  platform, platform),

@@ -35,7 +35,10 @@ def dev_init(env, platform):
     env.sysroot = env.BoardConfig().get("build.sysroot", "2") # INI file, default is 2 
     print '\033[1;34;40m'+"AZURE SPHERE SDK SYSROOT:", env.sysroot, "[",env.BoardConfig().get("build.core").upper(),"]", env.BoardConfig().get("build.variant")
     env.Append(
-        CPPDEFINES = [ "_POSIX_C_SOURCE" ],        
+        CPPDEFINES = [ 
+            "_POSIX_C_SOURCE",
+            "SYSROOT_" + env.sysroot.upper().replace("+", "_"), # -DSYSROOT_X
+        ],        
         CPPPATH = [ 
             join(env.framework_dir, "Sysroots", env.sysroot, "usr", "include"),        
             join("$PROJECT_DIR", "lib"),

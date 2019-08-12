@@ -1,6 +1,6 @@
 # Azure Sphere - PlatformIO
 * **OS Windows 10 ( only )** PIO work, GCC can compile for Unix ( tested ) but not have tools...
-* * Sysroot 2 ( will wait 3 )
+* * Sysroot 2 and 2+Beta1905 (**NEW**)
 * * Arduino applications
 * * Linux HighLevel applications
 * * Not support BareMetal
@@ -10,7 +10,8 @@
 * Arduino base core ( sources from last Arduino IDE )
 * HardwareSerial
 * GPIO
-* wifiClient ( TCP )
+* wifiClient
+* curlClient (**NEW**)
 * other in proggress...
 
 **Linux stage** 

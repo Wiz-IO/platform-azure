@@ -60,6 +60,8 @@ board = avnet_aesms_mt3620
 framework = arduino
 monitor_port = COM6
 monitor_speed = 115200
+;board_build.sysroot = 2+Beta1905 ; default is 2
+
 ;build_flags = -D MQTT_MAX_PACKET_SIZE=1024 -D MQTT_KEEPALIVE=60 ; any other
 ```
 

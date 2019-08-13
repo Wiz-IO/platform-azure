@@ -35,6 +35,7 @@
 * [MSDN Azure Sphere forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azuresphere)
 * [AVNET Azure Sphere MT3620 Starter Kit](http://cloudconnectkits.org/product/azure-sphere-starter-kit)
 * [Element14 Azure Sphere MT3620 Starter Kit](https://www.element14.com/community/community/designcenter/azure-sphere-starter-kits/)
+* [Media Tek Mt3620 Product Brief](https://d86o2zu8ugzlg.cloudfront.net/mediatek-craft/documents/mt3620/MediaTek-MT3620-Product-Brief-Nov2018.pdf)
 * I not have contact with supports...
 
 ## [INSTALL NOTES - READ](https://github.com/Wiz-IO/platform-azure/wiki/Install-Notes)

@@ -3,7 +3,7 @@
 * * Sysroot 2 and 2+Beta1905 (**NEW**)
 * * Arduino applications
 * * Linux HighLevel applications
-* * Not support BareMetal
+* * Not support BareMetal ( in proggress, compile, pack, but can run ?!? ... )
 * It is very beta version - **may be bugs yet** 
 
 **Arduino part**

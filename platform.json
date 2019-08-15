@@ -23,7 +23,11 @@
       "linux": {
         "package": "framework-azure",
         "script": "builder/frameworks/linux.py"
-      }       
+      },     
+      "baremetal": {
+        "package": "framework-azure",
+        "script": "builder/frameworks/baremetal.py"
+      }          
   },
   "packages": {
     "framework-azure": {
@@ -34,6 +38,10 @@
       "type": "toolchain",
       "version": "http://wizio.eu/azure/toolchain-arm-poky-linux-musleabi-hf-1.0.0.zip"
     },
+    "toolchain-gccarmnoneeabi": {
+      "type": "toolchain",
+      "version": "=1.70201.0"
+    },    
     "tool-azure": {
       "type": "uploader",
       "version": "https://github.com/Wiz-IO/tool-azure.git"

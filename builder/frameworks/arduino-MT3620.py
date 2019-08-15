@@ -6,6 +6,7 @@ import os
 from os.path import join
 from common import *
 from SCons.Script import ARGUMENTS, DefaultEnvironment, Builder
+from colorama import Fore
 
 def dev_create_template(env):
     hardwares = join(env.framework_dir, "Hardwares")
@@ -30,7 +31,7 @@ def dev_init(env, platform):
     env.sysroot = env.BoardConfig().get("build.sysroot", "2")   # from ini file, default is 2 
     core = env.BoardConfig().get("build.core")                  # from board
     variant = env.BoardConfig().get("build.variant")            # from board
-    print '\033[1;34;40m'+"AZURE SPHERE SDK SYSROOT:", env.sysroot, "[", core.upper(),"]", variant
+    print Fore.MAGENTA+"AZURE SPHERE SDK SYSROOT:", env.sysroot, "[", core.upper(),"]", variant, Fore.BLACK
     env.Append(
         CPPDEFINES = [ 
             "_POSIX_C_SOURCE", 

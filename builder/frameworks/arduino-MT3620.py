@@ -24,6 +24,7 @@ def dev_init(env, platform):
     env.tool_dir = env.PioPlatform().get_package_dir("tool-azure")
     env.framework_dir = env.PioPlatform().get_package_dir("framework-azure")
     env.toolchain_dir = env.PioPlatform().get_package_dir("toolchain-arm-poky-linux-musleabi-hf")    
+    env.baremetal = False  
     dev_create_template(env)
     dev_compiler_poky(env)
     env.sysroot = env.BoardConfig().get("build.sysroot", "2")   # from ini file, default is 2 

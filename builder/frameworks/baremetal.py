@@ -8,7 +8,6 @@ from SCons.Script import DefaultEnvironment
 env = DefaultEnvironment()
 platform = "baremetal"
 module = platform + "-" + env.BoardConfig().get("build.core")
-print "--MODULE", module
 m = __import__(module)       
 globals()[module] = m
 m.dev_init(env, platform)

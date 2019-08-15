@@ -26,7 +26,7 @@ from SCons.Script import (AlwaysBuild, Builder, COMMAND_LINE_TARGETS, Default, D
 from colorama import Fore
 
 env = DefaultEnvironment()
-print '<<<<<<<<<<<< '+env.BoardConfig().get("name").upper()+" 2019 Georgi Angelov >>>>>>>>>>>>" 
+print Fore.GREEN+'<<<<<<<<<<<< '+env.BoardConfig().get("name").upper()+" 2019 Georgi Angelov >>>>>>>>>>>>"+Fore.BLACK
 
 ####################################################
 # Build executable and linkable program
@@ -37,7 +37,6 @@ src = env.MakeHeader( join("$BUILD_DIR", "${PROGNAME}"), env.ElfToBin(join("$BUI
 AlwaysBuild( src )
 
 upload = env.Alias("upload", src, [ 
-    #env.VerboseAction(env.AutodetectUploadPort, "Looking for upload port..."),
     env.VerboseAction("$UPLOADCMD", '\033[93m'), # +"Uploading: $PROGNAME"),
     env.VerboseAction("", '\033[93m'+"End.")
 ])

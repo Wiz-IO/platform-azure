@@ -21,7 +21,6 @@ def get_uuid(path):
     return result[1]
 
 def get_exitcode_stdout_stderr(cmd):
-    #print "CMD", cmd
     proc = Popen(cmd, stdout=PIPE, stderr=PIPE)
     out, err = proc.communicate()
     exitcode = proc.returncode
@@ -31,17 +30,18 @@ def get_exitcode_stdout_stderr(cmd):
     return exitcode    
 
 def dev_copy_json(env):
-    # COPY mt3620.json
-    copyfile(
-        join(env.framework_dir, "Hardwares", "json", "mt3620.json"), 
-        join(env.subst("$BUILD_DIR"), "mt3620.json")
-    )
-    # COPY VARIANT.json
-    file = env.BoardConfig().get("build.variant") + ".json"
-    copyfile(
-        join(env.framework_dir, "Hardwares", "json", file), 
-        join(env.subst("$BUILD_DIR"), file)
-    )
+    if env.baremetal == False:
+        # COPY mt3620.json
+        copyfile(
+            join(env.framework_dir, "Hardwares", "json", "mt3620.json"), 
+            join(env.subst("$BUILD_DIR"), "mt3620.json")
+        )
+        # COPY VARIANT.json
+        file = env.BoardConfig().get("build.variant") + ".json"
+        copyfile(
+            join(env.framework_dir, "Hardwares", "json", file), 
+            join(env.subst("$BUILD_DIR"), file)
+        )
     # COPY app_manifest.json
     src = join(env.subst("$PROJECT_DIR"), "src", "app_manifest.json")
     dst = join(env.subst("$BUILD_DIR"), "app_manifest.json")
@@ -54,8 +54,7 @@ def dev_copy_json(env):
         data['EntryPoint'] = "/bin/app"                                                            # change this
         f.seek(0)        
         json.dump(data, f, indent=4)
-        f.truncate()  
-        #print data    
+        f.truncate()      
 
 def dev_pack_image(target, source, env):
     bin = join(env.subst("$BUILD_DIR"), "bin")
@@ -81,8 +80,10 @@ def dev_pack_image(target, source, env):
     cmd.append("--sysroot")
     cmd.append( env.sysroot )
     #cmd.append("--verbose")
-    cmd.append("--hardwaredefinition")
-    cmd.append( join(env.subst("$BUILD_DIR"), env.BoardConfig().get("build.variant") + ".json" ) ) # avnet_aesms_mt3620.json
+    if env.baremetal == False:
+        print "--hardwaredefinition"
+        cmd.append("--hardwaredefinition")
+        cmd.append( join(env.subst("$BUILD_DIR"), env.BoardConfig().get("build.variant") + ".json" ) ) # avnet_aesms_mt3620.json
     return get_exitcode_stdout_stderr(cmd)        
 
 
@@ -93,7 +94,7 @@ def dev_uploader(target, source, env):
     cmd.append("sideload")
     cmd.append("delete")
     if (0 == get_exitcode_stdout_stderr(cmd)):
-        print '\033[1;32;40m'+'OLD IS REMOVED'
+        print '\033[1;32;40m'+'OLD APPLICATION IS REMOVED'
     else: return
     cmd = []        
     cmd.append( join(env.tool_dir, "azsphere") ) 
@@ -103,7 +104,7 @@ def dev_uploader(target, source, env):
     cmd.append("--imagepackage")
     cmd.append(join(env.subst("$BUILD_DIR"), "app.image"))
     if (0 == get_exitcode_stdout_stderr(cmd)):
-        print '\033[1;32;40m'+'NEW IS DONE'
+        print '\033[1;32;40m'+'NEW APPLICATION IS READY'
     else: return     
 
 def dev_compiler_poky(env):

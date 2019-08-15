@@ -3,7 +3,7 @@
 * * Sysroot 2 and 2+Beta1905 (**NEW**)
 * * Arduino applications
 * * Linux HighLevel applications
-* * Will support BareMetal ( in proggress... )
+* * Baremetal applications (**NEW**)
 * It is very beta version - **may be bugs yet** 
 
 **Arduino part**
@@ -16,7 +16,7 @@
 * other in proggress...
 * [Examples](https://github.com/Wiz-IO/platform-azure/tree/master/Examples)
 
-**Linux part** 
+**Linux & Baremetal parts** 
 * As original [SDK](https://docs.microsoft.com/en-us/azure-sphere/) 
 * [Examples](https://github.com/Azure/azure-sphere-samples)
 

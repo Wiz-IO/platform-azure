@@ -83,7 +83,6 @@ def dev_pack_image(target, source, env):
     cmd.append( env.sysroot )
     #cmd.append("--verbose")
     if env.baremetal == False:
-        print "--hardwaredefinition"
         cmd.append("--hardwaredefinition")
         cmd.append( join(env.subst("$BUILD_DIR"), env.BoardConfig().get("build.variant") + ".json" ) ) # avnet_aesms_mt3620.json
     return get_exitcode_stdout_stderr(cmd)        

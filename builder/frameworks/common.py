@@ -8,7 +8,10 @@ import tempfile
 from shutil import copyfile
 from os.path import join, normpath, basename
 from subprocess import check_output, CalledProcessError, call, Popen, PIPE
+import uuid
+from colorama import Fore
 
+# Windows exe version
 def get_uuid(path):
     t = tempfile.TemporaryFile()
     try:
@@ -46,12 +49,14 @@ def dev_copy_json(env):
     src = join(env.subst("$PROJECT_DIR"), "src", "app_manifest.json")
     dst = join(env.subst("$BUILD_DIR"), "app_manifest.json")
     copyfile(src, dst)
-    uuid = get_uuid( join(env.tool_dir, "uuidgen-64") )  # or 32
+    U = str(uuid.uuid4()).upper()  # python version
+    #U = get_uuid( join(env.tool_dir, "uuidgen-64") )  # exe version: 
+    print Fore.BLUE+'UUID: ', U, Fore.BLACK
     with open(dst, 'r+') as f:
         data = json.load(f)
         if env.baremetal == True:
-            data['ApplicationType'] = "RealTimeCapable"
-        data['ComponentId'] = uuid                                                                 # change this
+            data['ApplicationType'] = "RealTimeCapable" 
+        data['ComponentId'] = U                                                                    # change this
         data['Name'] = "APP_" + basename( normpath( env.subst("$PROJECT_DIR") ) ).replace(" ", "") # change this ProjectName
         data['EntryPoint'] = "/bin/app"                                                            # change this
         f.seek(0)        
@@ -83,6 +88,7 @@ def dev_pack_image(target, source, env):
     cmd.append( env.sysroot )
     #cmd.append("--verbose")
     if env.baremetal == False:
+        print "--hardwaredefinition"
         cmd.append("--hardwaredefinition")
         cmd.append( join(env.subst("$BUILD_DIR"), env.BoardConfig().get("build.variant") + ".json" ) ) # avnet_aesms_mt3620.json
     return get_exitcode_stdout_stderr(cmd)        

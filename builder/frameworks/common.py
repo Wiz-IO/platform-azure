@@ -49,6 +49,8 @@ def dev_copy_json(env):
     uuid = get_uuid( join(env.tool_dir, "uuidgen-64") )  # or 32
     with open(dst, 'r+') as f:
         data = json.load(f)
+        if env.baremetal == True:
+            data['ApplicationType'] = "RealTimeCapable"
         data['ComponentId'] = uuid                                                                 # change this
         data['Name'] = "APP_" + basename( normpath( env.subst("$PROJECT_DIR") ) ).replace(" ", "") # change this ProjectName
         data['EntryPoint'] = "/bin/app"                                                            # change this

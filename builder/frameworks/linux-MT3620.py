@@ -34,7 +34,7 @@ def dev_init(env, platform):
     env.baremetal = False      
     dev_create_template(env)
     dev_compiler_poky(env)
-    env.sysroot = env.BoardConfig().get("build.sysroot", "2") # INI file, default is 2 
+    env.sysroot = env.BoardConfig().get("build.sysroot", "2+Beta1905") # INI file, default is max api 
     print Fore.MAGENTA+"AZURE SPHERE SDK SYSROOT:", env.sysroot, "[",env.BoardConfig().get("build.core").upper(),"]", env.BoardConfig().get("build.variant"),Fore.BLACK
     env.Append(
         CPPDEFINES = [ 

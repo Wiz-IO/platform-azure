@@ -1,6 +1,6 @@
 # Azure Sphere - PlatformIO
 * **OS Windows 10 ( only )** PIO work, GCC can compile for Unix ( tested ) but not have tools...
-* * Sysroot 2 and 2+Beta1905 (**NEW**)
+* * Sysroot 2 and 2+Beta1905
 * * Arduino applications
 * * Linux HighLevel applications
 * * Baremetal applications (**NEW**) 

@@ -5,7 +5,7 @@
 * * Arduino applications
 * * Linux HighLevel applications
 * * Baremetal applications (**NEW**) 
-* * Wiring Cortex-M4 ( is "cut out" Arduino, in progress... )
+* * Wiring Cortex-M4 ( is "cut out" Arduino, [in progress...](https://www.youtube.com/watch?v=bdG8GsRaUSA) )
 * It is very beta version - **may be bugs yet** 
 
 **Arduino part**

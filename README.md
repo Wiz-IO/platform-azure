@@ -11,7 +11,9 @@
 * HardwareSerial
 * GPIO
 * Wire (**NEW**)
+* Wire (**SPI**)
 * wifiClient
+* wifiUDP (**SPI**)
 * curlClient (**NEW**)
 * other in proggress...
 * [Examples](https://github.com/Wiz-IO/platform-azure/tree/master/Examples)
@@ -64,7 +66,7 @@ board = avnet_aesms_mt3620
 framework = arduino
 monitor_port = COM6
 monitor_speed = 115200
-;board_build.sysroot = 2+Beta1905 ; default is 2
+;board_build.sysroot = 2 ; default is max api version
 
 ;build_flags = -D MQTT_MAX_PACKET_SIZE=1024 -D MQTT_KEEPALIVE=60 ; any other
 ```

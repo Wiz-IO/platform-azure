@@ -53,7 +53,7 @@ PlatformIO - Home - Platforms - Advanced Installation
 
 Paste link: https://github.com/Wiz-IO/platform-azure 
 
-## Fast Uninstal \ Reinstall
+## Fast Uninstal
 * goto C:\Users\USER_NAME\.platformio\platforms **delete** folder **azure**
 * goto C:\Users\USER_NAME\.platformio\packages **delete** folder **framework-azure**
 

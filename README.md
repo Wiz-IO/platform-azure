@@ -4,17 +4,18 @@
 * * Arduino applications
 * * Linux HighLevel applications
 * * Baremetal applications (**NEW**) 
+* * Wiring Cortex-M4 ( is "cut out" Arduino, in progress... )
 * It is very beta version - **may be bugs yet** 
 
 **Arduino part**
 * Arduino base core ( sources from last Arduino IDE )
 * HardwareSerial
 * GPIO
-* Wire (**NEW**)
-* Wire (**SPI**)
+* Wire
+* SPI (**NEW**)
 * wifiClient
-* wifiUDP (**SPI**)
-* curlClient (**NEW**)
+* wifiUDP (**NEW**)
+* curlClient
 * other in proggress...
 * [Examples](https://github.com/Wiz-IO/platform-azure/tree/master/Examples)
 

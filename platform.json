@@ -27,7 +27,11 @@
       "baremetal": {
         "package": "framework-azure",
         "script": "builder/frameworks/baremetal.py"
-      }          
+      },
+      "wiring": {
+        "package": "framework-azure",
+        "script": "builder/frameworks/wiring.py"
+      }      
   },
   "packages": {
     "framework-azure": {

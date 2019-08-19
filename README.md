@@ -1,7 +1,7 @@
 # Azure Sphere - PlatformIO
-* version 1.0.5 ( if there is something new )
+* version 1.0.6 ( if there is something new )
 * **OS Windows 10 ( only )** PIO work, GCC can compile for Unix ( tested ) but not have tools...
-* * Sysroot 2 and 2+Beta1905
+* * Sysroot 2+Beta1905 ( 2 is removed )
 * * Arduino applications
 * * Linux HighLevel applications
 * * Baremetal applications (**NEW**) 
@@ -19,6 +19,12 @@
 * curlClient
 * other in proggress...
 * [Examples](https://github.com/Wiz-IO/platform-azure/tree/master/Examples)
+
+**Wiring part ( Arduino for M4F core )**
+* Arduino base core
+* HardwareSerial (in progress)
+* GPIO
+* ADC
 
 **Linux & Baremetal parts** 
 * As original [SDK](https://docs.microsoft.com/en-us/azure-sphere/) 

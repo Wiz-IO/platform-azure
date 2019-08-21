@@ -35,11 +35,9 @@ print Fore.GREEN+'<<<<<<<<<<<< '+env.BoardConfig().get("name").upper()+" 2019 Ge
 elf = env.BuildProgram()
 src = env.MakeHeader( join("$BUILD_DIR", "${PROGNAME}"), env.ElfToBin(join("$BUILD_DIR", "${PROGNAME}"), elf) )
 AlwaysBuild( src )
-
 upload = env.Alias("upload", src, [ 
-    env.VerboseAction("$UPLOADCMD", '\033[93m'), # +"Uploading: $PROGNAME"),
-    env.VerboseAction("", '\033[93m'+"End.")
+    env.VerboseAction("$UPLOADCMD", "\n"), 
+    env.VerboseAction("", "\n")
 ])
 AlwaysBuild( upload )    
-
 Default( src )

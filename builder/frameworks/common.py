@@ -2,97 +2,88 @@
 # http://www.wizio.eu/
 # https://github.com/Wiz-IO
 
-import os
-import json
-import tempfile
+import os, json, tempfile, shutil, uuid
 from shutil import copyfile
 from os.path import join, normpath, basename
 from subprocess import check_output, CalledProcessError, call, Popen, PIPE
-import uuid
+from time import sleep
 from colorama import Fore
 
-# Windows exe version
-def get_uuid(path):
-    t = tempfile.TemporaryFile()
-    try:
-        output = check_output(path, stderr = t.seek(0))
-    except CalledProcessError as e:
-        result = e.returncode, t.read()
-    else:
-        result = 0, output.replace("\r\n", "")
-        print '\nUUID: ' + result[1].upper()
-    return result[1]
+def clean(path):
+    for c in os.listdir(path):
+        full_path = os.path.join(path, c)
+        if os.path.isfile(full_path):
+            os.remove(full_path)
+        else:
+            shutil.rmtree(full_path)
+    try: os.remove(path)     
+    except: pass  
 
-def get_exitcode_stdout_stderr(cmd):
+def execute(cmd):
     proc = Popen(cmd, stdout=PIPE, stderr=PIPE)
     out, err = proc.communicate()
-    exitcode = proc.returncode
-    if exitcode != 0:
-        print '\n\033[91m' + out, "\n"
-        print '\n\033[91m' + err, "\n"
-    return exitcode    
+    lines = out.decode().split("\r\n")
+    if proc.returncode == 0: COLOR = Fore.GREEN
+    else: COLOR = Fore.RED
+    for i in range( len(lines) ):
+        print COLOR + lines[i]
+        sleep(0.1)
+    if proc.returncode != 0:
+        sleep(0.5)
+        exit(1)
+    return 0
 
 def dev_copy_json(env):
+    PROJECT_DIR = env.subst("$PROJECT_DIR")
+    JSON_DIR = join(env.framework_dir, "Hardwares", "json")
+    APPROOT_DIR = join(env.subst("$BUILD_DIR"), "approot")
     if env.baremetal == False:
-        # COPY mt3620.json
-        copyfile(
-            join(env.framework_dir, "Hardwares", "json", "mt3620.json"), 
-            join(env.subst("$BUILD_DIR"), "mt3620.json")
-        )
-        # COPY VARIANT.json
+        copyfile( join(JSON_DIR, "mt3620.json"), join(APPROOT_DIR, "mt3620.json") )
         file = env.BoardConfig().get("build.variant") + ".json"
-        copyfile(
-            join(env.framework_dir, "Hardwares", "json", file), 
-            join(env.subst("$BUILD_DIR"), file)
-        )
-    # COPY app_manifest.json
-    src = join(env.subst("$PROJECT_DIR"), "src", "app_manifest.json")
-    dst = join(env.subst("$BUILD_DIR"), "app_manifest.json")
-    copyfile(src, dst)
-    U = str(uuid.uuid4()).upper()  # python version
-    #U = get_uuid( join(env.tool_dir, "uuidgen-64") )  # exe version: 
-    print Fore.BLUE+'UUID: ', U, Fore.BLACK
-    with open(dst, 'r+') as f:
+        copyfile( join(JSON_DIR, file), join(APPROOT_DIR, file) )
+    app_manifest = join(APPROOT_DIR, "app_manifest.json")
+    copyfile( join(PROJECT_DIR, "src", "app_manifest.json"), app_manifest )
+    UIID = str(uuid.uuid4()).upper()  
+    print Fore.BLUE + 'UUID: ', UIID, Fore.BLACK
+    with open(app_manifest, 'r+') as f:
         data = json.load(f)
         if env.baremetal == True:
             data['ApplicationType'] = "RealTimeCapable" 
-        data['ComponentId'] = U                                                                    # change this
-        data['Name'] = "APP_" + basename( normpath( env.subst("$PROJECT_DIR") ) ).replace(" ", "") # change this ProjectName
-        data['EntryPoint'] = "/bin/app"                                                            # change this
+        data['ComponentId'] = UIID                                                          
+        data['Name'] = "APP_" + basename(normpath(PROJECT_DIR)).replace(" ", "") 
+        data['EntryPoint'] = "/bin/app"                                                     
         f.seek(0)        
         json.dump(data, f, indent=4)
         f.truncate()      
 
 def dev_pack_image(target, source, env):
-    bin = join(env.subst("$BUILD_DIR"), "bin")
-    try:    os.remove(join(env.subst("$BUILD_DIR"), "app.image"))
-    except: pass
-    try:    os.remove(join(bin, "app"))
-    except: pass   
-    try:    os.remove(bin)     
-    except: pass
-    if False == os.path.isdir(bin):    
-        os.makedirs(bin)    
-    copyfile(join(env.subst("$BUILD_DIR"), "app.elf"), join(bin, "app"))
+    BUILD_DIR = env.subst("$BUILD_DIR")
+    APPROOT_DIR = join(BUILD_DIR, "approot") 
+    bin = join(APPROOT_DIR, "bin")
+    if True == os.path.isdir(APPROOT_DIR):
+        clean(APPROOT_DIR)  
+    if False == os.path.isdir(APPROOT_DIR):
+        os.makedirs(APPROOT_DIR)   
+    if False == os.path.isdir(bin):
+        os.makedirs(bin) 
+    copyfile(join(BUILD_DIR, "app.elf"), join(bin, "app"))
     dev_copy_json(env)
     cmd = []
-    dst = join(env.subst("$BUILD_DIR"), "app_manifest.json")
+    dst = join(BUILD_DIR, "app_manifest.json")
     cmd.append( join(env.tool_dir, "azsphere") ) 
     cmd.append("image")
     cmd.append("package-application")
     cmd.append("--input")
-    cmd.append( env.subst("$BUILD_DIR") ) 
+    cmd.append( APPROOT_DIR ) 
     cmd.append("--output")
-    cmd.append( join(env.subst("$BUILD_DIR"), "app.image") ) # 
+    cmd.append( join(BUILD_DIR, "app.image") ) 
     cmd.append("--sysroot")
     cmd.append( env.sysroot )
     #cmd.append("--verbose")
     if env.baremetal == False:
-        print "--hardwaredefinition"
         cmd.append("--hardwaredefinition")
-        cmd.append( join(env.subst("$BUILD_DIR"), env.BoardConfig().get("build.variant") + ".json" ) ) # avnet_aesms_mt3620.json
-    return get_exitcode_stdout_stderr(cmd)        
-
+        cmd.append( join(APPROOT_DIR, env.BoardConfig().get("build.variant") + ".json" ) ) 
+    return execute(cmd)        
 
 def dev_uploader(target, source, env):
     cmd = []
@@ -100,9 +91,9 @@ def dev_uploader(target, source, env):
     cmd.append("device")
     cmd.append("sideload")
     cmd.append("delete")
-    if (0 == get_exitcode_stdout_stderr(cmd)):
-        print '\033[1;32;40m'+'OLD APPLICATION IS REMOVED'
-    else: return
+    if (0 == execute(cmd)):
+        print Fore.CYAN + 'OLD APPLICATION IS REMOVED'
+    else: exit(1)
     cmd = []        
     cmd.append( join(env.tool_dir, "azsphere") ) 
     cmd.append("device")
@@ -110,9 +101,9 @@ def dev_uploader(target, source, env):
     cmd.append("deploy")
     cmd.append("--imagepackage")
     cmd.append(join(env.subst("$BUILD_DIR"), "app.image"))
-    if (0 == get_exitcode_stdout_stderr(cmd)):
-        print '\033[1;32;40m'+'NEW APPLICATION IS READY'
-    else: return     
+    rc = execute(cmd)
+    if (0 == rc):
+        print Fore.CYAN + 'NEW APPLICATION IS READY'   
 
 def dev_compiler_poky(env):
     env.Replace(

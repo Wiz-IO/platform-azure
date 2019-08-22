@@ -2,9 +2,9 @@
 * **version 1.0.7** ( look here, [if there is something new](https://github.com/Wiz-IO/platform-azure/blob/master/fix.md) )
 * **OS Windows 10 ( only )** PIO work, GCC can compile for Unix ( tested ) but not have tools...
 * * Sysroot 2+Beta1905 ( 2 is removed )
-* * Arduino applications
-* * Linux HighLevel applications
-* * Baremetal applications (**NEW**) 
+* * Arduino applications (HighLevel)
+* * Linux applications (HighLevel)
+* * Baremetal Cortex-M4 applications (**NEW**) 
 * * Wiring Cortex-M4 ( is "cut out" Arduino, [in progress...](https://www.youtube.com/watch?v=bdG8GsRaUSA) ) (**NEW**)
 * It is very beta version - **may be bugs yet** 
 

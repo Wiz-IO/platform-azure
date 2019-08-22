@@ -122,3 +122,13 @@ def dev_compiler_poky(env):
         PROGSUFFIX=".elf",  
     )      
     env.Append(UPLOAD_PORT='azsphere') #upload_port = "must exist variable"
+
+def use_original_sdk(env):
+    env.SDK = "C:\\Program Files (x86)\\Microsoft Azure Sphere SDK"
+    use_sdk = env.BoardConfig().get("build.use_sdk", 1) # disable from ini
+    if 1 == use_sdk and hasattr(env, 'SDK') and os.path.isdir(env.SDK):
+        env['ENV']['PATH'] = join(env.SDK, "Sysroots", env.sysroot, "tools", "gcc")
+        env.tool_dir = join(env.SDK, "Tools")
+        print Fore.MAGENTA + "USED", env.SDK, Fore.BLACK    
+        
+        

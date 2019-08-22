@@ -3,8 +3,8 @@
 # https://github.com/Wiz-IO
 
 import os, json, tempfile, shutil, uuid
-from shutil import copyfile
 from os.path import join, normpath, basename
+from shutil import copyfile
 from subprocess import check_output, CalledProcessError, call, Popen, PIPE
 from time import sleep
 from colorama import Fore
@@ -29,23 +29,20 @@ def execute(cmd):
         print COLOR + lines[i]
         sleep(0.1)
     if proc.returncode != 0:
-        sleep(0.5)
+        sleep(0.1)
         exit(1)
     return 0
 
 def dev_copy_json(env):
-    PROJECT_DIR = env.subst("$PROJECT_DIR")
-    JSON_DIR = join(env.framework_dir, "Hardwares", "json")
-    APPROOT_DIR = join(env.subst("$BUILD_DIR"), "approot")
-    if env.baremetal == False:
-        copyfile( join(JSON_DIR, "mt3620.json"), join(APPROOT_DIR, "mt3620.json") )
-        file = env.BoardConfig().get("build.variant") + ".json"
-        copyfile( join(JSON_DIR, file), join(APPROOT_DIR, file) )
-    app_manifest = join(APPROOT_DIR, "app_manifest.json")
-    copyfile( join(PROJECT_DIR, "src", "app_manifest.json"), app_manifest )
+    PROJECT_DIR = env.subst("$PROJECT_DIR")    
+    APP_MANIFEST = join(env.subst("$BUILD_DIR"), "approot", "app_manifest.json")
+    copyfile( 
+        join(PROJECT_DIR, "src", "app_manifest.json"), 
+        APP_MANIFEST 
+    )
     UIID = str(uuid.uuid4()).upper()  
     print Fore.BLUE + 'UUID: ', UIID, Fore.BLACK
-    with open(app_manifest, 'r+') as f:
+    with open(APP_MANIFEST, 'r+') as f:
         data = json.load(f)
         if env.baremetal == True:
             data['ApplicationType'] = "RealTimeCapable" 
@@ -82,7 +79,7 @@ def dev_pack_image(target, source, env):
     #cmd.append("--verbose")
     if env.baremetal == False:
         cmd.append("--hardwaredefinition")
-        cmd.append( join(APPROOT_DIR, env.BoardConfig().get("build.variant") + ".json" ) ) 
+        cmd.append( join(env.framework_dir, "Hardwares", "json", env.BoardConfig().get("build.variant") + ".json" ) )
     return execute(cmd)        
 
 def dev_uploader(target, source, env):

@@ -1,6 +1,6 @@
 # Azure Sphere - PlatformIO
 * **version 1.0.7** ( look here, [if there is something new](https://github.com/Wiz-IO/platform-azure/blob/master/fix.md) )
-* **OS Windows 10 ( only )** PIO work, GCC can compile for Unix ( tested ) but not have tools...
+* **OS Windows 10 ( only )** ( not have tools for Unix... )
 * * Sysroot 2+Beta1905 ( 2 is removed )
 * * Arduino HighLevel applications
 * * Linux HighLevel applications

@@ -105,11 +105,13 @@ def dev_uploader(target, source, env):
     cmd.append("device")
     cmd.append("sideload")
     cmd.append("delete")
+    WHO = "ALL"
     if "current" == env.delete:
         cmd.append("-i")
         cmd.append(env.GUID)
+        WHO = env.GUID
     if (0 == execute(cmd)):
-        print Fore.CYAN + 'OLD APPLICATION IS REMOVED'
+        print Fore.CYAN + WHO + ' APP IS REMOVED'
     else: exit(1)
     cmd = []        
     cmd.append( join(env.tool_dir, "azsphere") ) 

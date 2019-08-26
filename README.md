@@ -1,10 +1,10 @@
 # Azure Sphere - PlatformIO
 * **version 1.0.8** ( look here, [if there is something new](https://github.com/Wiz-IO/platform-azure/blob/master/fix.md) )
 * **OS Windows 10 ( only )** ( not have tools for Unix... )
-* * Sysroot 2+Beta1905 ( 2 is removed )
+* * Sysroot 2+Beta1905
 * * Arduino HighLevel applications
 * * Linux HighLevel applications
-* * Baremetal Cortex-M4 applications (**NEW**) 
+* * Baremetal Cortex-M4 applications  
 * * Wiring Cortex-M4 ( is "cut out" Arduino, [in progress...](https://www.youtube.com/watch?v=bdG8GsRaUSA) ) (**NEW**)
 * It is very beta version - **may be bugs yet** 
 

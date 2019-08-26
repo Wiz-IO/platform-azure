@@ -27,10 +27,12 @@ def dev_init(env, platform):
     env.toolchain_dir = env.PioPlatform().get_package_dir("toolchain-arm-poky-linux-musleabi-hf")    
     env.baremetal = False  
     dev_create_template(env)
+    dev_guid(env)
     dev_compiler_poky(env)
-    env.sysroot = env.BoardConfig().get("build.sysroot", "2+Beta1905")   # from ini file, default is max api version 
-    core = env.BoardConfig().get("build.core")                  # from board
-    variant = env.BoardConfig().get("build.variant")            # from board
+    env.sysroot = env.BoardConfig().get("build.sysroot", "2+Beta1905") # from ini file, default is max api version
+    env.delete = env.BoardConfig().get("build.delete", "current")      # from ini file, delete current OR ALL
+    core = env.BoardConfig().get("build.core")       # from board
+    variant = env.BoardConfig().get("build.variant") # from board
     print Fore.MAGENTA+"AZURE SPHERE SDK SYSROOT:", env.sysroot, "[", core.upper(),"]", variant, Fore.BLACK
     env.Append(
         CPPDEFINES = [ 
@@ -54,8 +56,7 @@ def dev_init(env, platform):
             "-fno-omit-frame-pointer", 
             "-fno-strict-aliasing",  
             "-Wall",    
-            "-fno-exceptions",
-                                                                   
+            "-fno-exceptions",                                                
         ],  
         CXXFLAGS = [                                
             "-fno-rtti",
@@ -109,6 +110,7 @@ def dev_init(env, platform):
             join("$PROJECT_DIR", "lib"),                       
     ))         
     env.Append(LIBS = libs)   
+    use_original_sdk(env)
 
 
 

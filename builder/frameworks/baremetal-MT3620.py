@@ -49,8 +49,10 @@ def dev_init(env, platform):
     env.toolchain_dir = env.PioPlatform().get_package_dir("toolchain-gccarmnoneeabi")     
     env.baremetal = True 
     dev_create_template(env)
+    dev_guid(env)
     dev_compiler(env)
-    env.sysroot = env.BoardConfig().get("build.sysroot", "2+Beta1905") # INI file, default must be BETA
+    env.sysroot = env.BoardConfig().get("build.sysroot", "2+Beta1905") # from ini file, default must be BETA
+    env.delete = env.BoardConfig().get("build.delete", "current")      # from ini file, delete current OR ALL
     print Fore.MAGENTA+"AZURE SPHERE SDK SYSROOT:", env.sysroot, "[",env.BoardConfig().get("build.core").upper(),"]", env.BoardConfig().get("build.variant")+Fore.BLACK
     env.Append(
         CPPDEFINES = [],        
@@ -104,7 +106,8 @@ def dev_init(env, platform):
             join("$BUILD_DIR", "_custom"), 
             join("$PROJECT_DIR", "lib"),                       
     ))         
-    env.Append(LIBS = libs)   
+    env.Append(LIBS = libs)  
+    use_original_sdk(env)
 
 
 

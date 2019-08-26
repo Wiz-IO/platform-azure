@@ -90,7 +90,7 @@ Build, Upload ... if uploader work ( tested on Windows 10 ) - nice ... enjoy
 
 ## Manual upload
 
-**azsphere device sideload delete** delete all or -> **-i GUID**
+**azsphere device sideload delete** delete all or current -> **-i GUID**
 
 **azsphere device sideload deploy --imagepackage PATH-TO-PROJECT\NAME\.pio\build\VARIANT\app.image**
 

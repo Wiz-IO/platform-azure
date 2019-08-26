@@ -1,9 +1,10 @@
 # WizIO 2019 Georgi Angelov
-# http://www.wizio.eu/
-# https://github.com/Wiz-IO
+#   http://www.wizio.eu/
+#   https://github.com/Wiz-IO
 
 import os, json, tempfile, shutil, uuid
 from os.path import join, normpath, basename
+from uuid import UUID
 from shutil import copyfile
 from subprocess import check_output, CalledProcessError, call, Popen, PIPE
 from time import sleep
@@ -33,20 +34,36 @@ def execute(cmd):
         exit(1)
     return 0
 
+def dev_guid(env, save = True):
+    with open(join(env.subst("$PROJECT_DIR"), "src", "app_manifest.json"), 'r+') as f:
+        data = json.load(f)
+        NEW = True
+        if 'ComponentId' in data:
+            try:
+                val = UUID(data['ComponentId'], version=4)
+                NEW = False
+            except ValueError:
+                print Fore.RED + "ERROR GUID ", 
+        if True == NEW:
+            GUID = str(uuid.uuid4()).upper()
+            data['ComponentId'] = GUID
+            print Fore.BLUE + "GENERATED NEW GUID", GUID, Fore.BLACK 
+        if True == save:
+            f.seek(0)
+            json.dump(data, f, indent=4) 
+            f.truncate()         
+    env.GUID = data['ComponentId']
+    return env.GUID
+
 def dev_copy_json(env):
     PROJECT_DIR = env.subst("$PROJECT_DIR")    
     APP_MANIFEST = join(env.subst("$BUILD_DIR"), "approot", "app_manifest.json")
-    copyfile( 
-        join(PROJECT_DIR, "src", "app_manifest.json"), 
-        APP_MANIFEST 
-    )
-    UIID = str(uuid.uuid4()).upper()  
-    print Fore.BLUE + 'UUID: ', UIID, Fore.BLACK
+    copyfile(join(PROJECT_DIR, "src", "app_manifest.json"), APP_MANIFEST)
+    print Fore.BLUE + 'COMPONENT ID ', dev_guid(env, False), Fore.BLACK
     with open(APP_MANIFEST, 'r+') as f:
         data = json.load(f)
         if env.baremetal == True:
-            data['ApplicationType'] = "RealTimeCapable" 
-        data['ComponentId'] = UIID                                                          
+            data['ApplicationType'] = "RealTimeCapable"                                                           
         data['Name'] = "APP_" + basename(normpath(PROJECT_DIR)).replace(" ", "") 
         data['EntryPoint'] = "/bin/app"                                                     
         f.seek(0)        
@@ -88,6 +105,9 @@ def dev_uploader(target, source, env):
     cmd.append("device")
     cmd.append("sideload")
     cmd.append("delete")
+    if "current" == env.delete:
+        cmd.append("-i")
+        cmd.append(env.GUID)
     if (0 == execute(cmd)):
         print Fore.CYAN + 'OLD APPLICATION IS REMOVED'
     else: exit(1)

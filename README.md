@@ -78,9 +78,12 @@ board = avnet_aesms_mt3620
 framework = arduino
 monitor_port = COM6
 monitor_speed = 115200
-;board_build.sysroot = 2 ; default is max api version
 
-;build_flags = -D MQTT_MAX_PACKET_SIZE=1024 -D MQTT_KEEPALIVE=60 ; any other
+;board_build.sysroot = 2  ; default is max version
+;board_build.delete = all ; default is current application
+;board_build.use_sdk = 0  ; default is USE installed if exist, 0 = use PIO
+
+;build_flags = -D ANY_FLAG
 ```
 
 Build, Upload ... if uploader work ( tested on Windows 10 ) - nice ... enjoy

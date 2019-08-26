@@ -70,7 +70,7 @@ PlatformIO - Home - New
 * you will have basic template project
 * Open 'src/app_manifest.json' and enter your 'Capabilities'
 * Open 'platformio.ini' and edit your settings
-* INI example:
+* Project **platformio.ini** example:
 ```ini
 [env:avnet_aesms_mt3620]
 platform = azure

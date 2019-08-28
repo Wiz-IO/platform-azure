@@ -1,3 +1,7 @@
+[28.08.2019]
+* Serial.available()
+* Client.available()
+
 [26.08.2019]
 * ComponentID (GUID) once
 * platformio.ini - delete current or all applications

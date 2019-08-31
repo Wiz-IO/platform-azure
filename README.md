@@ -1,5 +1,5 @@
 # Azure Sphere - PlatformIO
-* **version 1.0.9** ( look here, [if there is something new](https://github.com/Wiz-IO/platform-azure/blob/master/fix.md) )
+* **version 1.0.10** ( look here, [if there is something new](https://github.com/Wiz-IO/platform-azure/blob/master/fix.md) )
 * **OS Windows 10 ( only )** ( not have tools for Unix... )
 * * Sysroot 2+Beta1905
 * * Arduino HighLevel applications

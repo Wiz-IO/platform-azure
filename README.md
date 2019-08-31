@@ -94,8 +94,7 @@ Build, Upload ... if uploader work ( tested on Windows 10 ) - nice ... enjoy
 
 **azsphere device sideload deploy --imagepackage PATH-TO-PROJECT\NAME\.pio\build\VARIANT\app.image**
 
-## IF YOU WANT HELP / SUPPORT - CONNECT ME
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ESUP9LCZMZTD6)
+
 
 ## Thanks to:
 * [Ivan Kravets ( PlatformIO )](https://platformio.org/)
@@ -107,3 +106,6 @@ Build, Upload ... if uploader work ( tested on Windows 10 ) - nice ... enjoy
 ![Project](https://raw.githubusercontent.com/Wiz-IO/LIB/master/images/azure.png) 
 
 ![Project](https://raw.githubusercontent.com/Wiz-IO/LIB/master/images/azure-platformio.png) 
+
+**IF YOU WANT HELP / SUPPORT - CONNECT ME**
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ESUP9LCZMZTD6)

@@ -100,7 +100,8 @@ Build, Upload ... if uploader work ( tested on Windows 10 ) - nice ... enjoy
 ## Thanks to:
 * [Ivan Kravets ( PlatformIO )](https://platformio.org/)
 * [Comet electronics](https://www.comet.bg/?cid=111)
-* your name
+* Roberto del Campo
+* Junxiao Shi
 
 
 ![Project](https://raw.githubusercontent.com/Wiz-IO/LIB/master/images/azure.png) 

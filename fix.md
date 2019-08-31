@@ -1,3 +1,7 @@
+[31.08.2019]
+* fix times (Junxiao Shi)
+* fix Wire (Junxiao Shi)
+
 [28.08.2019]
 * Serial.available()
 * Client.available()

@@ -1,3 +1,7 @@
+[02.09.2019]
+* Add Arduino get utc()
+* Fix millis() zero from beginning
+
 [31.08.2019]
 * Fix times ( Junxiao Shi )
 * Fix Wire ( Junxiao Shi )

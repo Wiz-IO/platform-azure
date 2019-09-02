@@ -6,7 +6,7 @@
 * * Linux HighLevel applications
 * * Baremetal Cortex-M4 applications  
 * * Wiring Cortex-M4 ( is "cut out" Arduino, [in progress...](https://www.youtube.com/watch?v=bdG8GsRaUSA) ) (**NEW**)
-* It is very beta version - **may be bugs yet** 
+* It is very beta version - **[may be bugs yet](https://github.com/Wiz-IO/framework-azure)** 
 
 **Arduino part**
 * Arduino base core ( sources from last Arduino IDE )

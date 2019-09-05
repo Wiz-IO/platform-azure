@@ -55,7 +55,15 @@ def dev_guid(env, save = True):
     env.GUID = data['ComponentId']
     return env.GUID
 
+def copy_files(env):
+    list = env.BoardConfig().get("build.copy", " ").split()
+    count = len(list) 
+    for i in range(count):
+        copyfile(join(env.subst("$PROJECT_DIR"), "src", list[i]), 
+                 join(env.subst("$BUILD_DIR"), "approot", list[i])) 
+
 def dev_copy_json(env):
+    copy_files(env)
     PROJECT_DIR = env.subst("$PROJECT_DIR")    
     APP_MANIFEST = join(env.subst("$BUILD_DIR"), "approot", "app_manifest.json")
     copyfile(join(PROJECT_DIR, "src", "app_manifest.json"), APP_MANIFEST)

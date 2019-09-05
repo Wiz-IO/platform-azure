@@ -1,3 +1,7 @@
+[05.09.2019]
+* Fix copy
+* Fix C++ includes ( Junxiao Shi )
+
 [02.09.2019]
 * Add Arduino get utc()
 * Add Library Generate SAS token

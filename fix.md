@@ -1,3 +1,6 @@
+[10.09.2019]
+* Serial.redirect(stderr); // LogDebug() can be used
+
 [05.09.2019]
 * Fix copy
 * Fix C++ includes ( Junxiao Shi )

@@ -41,13 +41,12 @@
 ![Project](https://raw.githubusercontent.com/Wiz-IO/LIB/master/images/azuresphere.jpg) 
 
 **Documentations, Support, Forums**
+* [Mediatek MT3620](https://www.mediatek.com/products/azureSphere/mt3620)
 * [Azure Sphere Documentation](https://docs.microsoft.com/en-us/azure-sphere/)
 * [MSDN Azure Sphere forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azuresphere)
 * [AVNET Azure Sphere MT3620 Starter Kit](http://cloudconnectkits.org/product/azure-sphere-starter-kit)
 * [Element14 Azure Sphere MT3620 Starter Kit](https://www.element14.com/community/community/designcenter/azure-sphere-starter-kits/)
-* [Mediatek MT3620](https://www.mediatek.com/products/azureSphere/mt3620)
 * [Speed Test CoreMark 1.0](https://github.com/PaulStoffregen/CoreMark) = **1425.31** ( -Ofast )
-* I not have contact with supports...
 * [WIKI](https://github.com/Wiz-IO/platform-azure/wiki)
 
 ## [INSTALL NOTES - READ](https://github.com/Wiz-IO/platform-azure/wiki/Install-Notes)

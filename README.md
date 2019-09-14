@@ -6,6 +6,7 @@
 * * Linux HighLevel applications
 * * Baremetal Cortex-M4 applications  
 * * Wiring Cortex-M4 ( is "cut out" Arduino, [in progress...](https://www.youtube.com/watch?v=bdG8GsRaUSA) ) (**NEW**)
+* [Full API](https://github.com/Wiz-IO/platform-azure/wiki/How-to-unlock-all-API-s) (**NEW**)
 * It is very beta version - **[may be bugs yet](https://github.com/Wiz-IO/framework-azure)** 
 
 **Arduino part**

@@ -80,8 +80,8 @@ framework = arduino
 monitor_port = COM6
 monitor_speed = 115200
 
-;board_build.sysroot = 2  ; default is max version 2+Beta1905
-;board_build.delete = all ; default is current application
+;board_build.sysroot = 2  ; default is max version, 2+Beta1905
+;board_build.delete = all ; default is current application, = 0 
 ;board_build.use_sdk = 0  ; default is USE installed if exist, 0 = use PIO
 
 ;board_build.copy =  filename.1 filename.2 

@@ -84,6 +84,10 @@ monitor_speed = 115200
 ;board_build.delete = all ; default is current application
 ;board_build.use_sdk = 0  ; default is USE installed if exist, 0 = use PIO
 
+;board_build.copy =  filename.1 filename.2 
+;    copy files from project SRC to image-package, as certificates, settings, etc
+;    path is /mnt/APP-GUID/filename ... Storage_GetAbsolutePathInImagePackage()
+
 ;build_flags = -D ANY_FLAG
 ```
 

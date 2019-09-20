@@ -1,3 +1,7 @@
+[20.09.2019]
+* Add [Experimental mode](https://github.com/Wiz-IO/platform-azure/wiki/Arduino-INI-file#experimental-mode) for libc and libwolfssl
+* Add Arduino lib ClientSecure ( need Experimental mode )
+
 [10.09.2019]
 * Serial.redirect(stderr); // LogDebug() can be used
 

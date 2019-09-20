@@ -1,5 +1,5 @@
 # Azure Sphere - PlatformIO
-* **version 1.0.13** ( look here, [if there is something new](https://github.com/Wiz-IO/platform-azure/blob/master/fix.md) )
+* **version 1.0.14** ( look here, [if there is something new](https://github.com/Wiz-IO/platform-azure/blob/master/fix.md) )
 * **OS Windows 10 ( only )** ( not have tools for Unix... )
 * * Sysroot 2+Beta1905
 * * Arduino HighLevel applications
@@ -7,6 +7,7 @@
 * * Baremetal Cortex-M4 applications  
 * * Wiring Cortex-M4 ( is "cut out" Arduino, [in progress...](https://www.youtube.com/watch?v=bdG8GsRaUSA) ) (**NEW**)
 * [Full API](https://github.com/Wiz-IO/platform-azure/wiki/How-to-unlock-all-API-s) (**NEW**)
+* [Experimental mode](https://github.com/Wiz-IO/platform-azure/wiki/Arduino-INI-file#experimental-mode) for libc and libwolfssl (**NEW**) (only for Arduino for now)
 * It is very beta version - **[may be bugs yet](https://github.com/Wiz-IO/framework-azure)** 
 
 **Arduino part**
@@ -14,10 +15,11 @@
 * HardwareSerial
 * GPIO
 * Wire
-* SPI (**NEW**)
+* SPI 
 * wifiClient
-* wifiUDP (**NEW**)
+* wifiUDP 
 * curlClient
+* ClientSecure (**NEW**)
 * other in proggress...
 * [Examples](https://github.com/Wiz-IO/platform-azure/tree/master/Examples)
 

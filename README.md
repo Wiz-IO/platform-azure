@@ -73,7 +73,7 @@ PlatformIO - Home - New
 * you will have basic template project
 * Open 'src/app_manifest.json' and enter your 'Capabilities'
 * Open 'platformio.ini' and edit your settings
-* Project **platformio.ini** example:
+* Project [platformio.ini](https://github.com/Wiz-IO/platform-azure/wiki/Arduino-INI-file) example:
 ```ini
 [env:avnet_aesms_mt3620]
 platform = azure
@@ -89,6 +89,8 @@ monitor_speed = 115200
 ;board_build.copy =  filename.1 filename.2 
 ;    copy files from project SRC to image-package, as certificates, settings, etc
 ;    path is /mnt/APP-GUID/filename ... Storage_GetAbsolutePathInImagePackage()
+
+;board_build.ex_mode = enabled ; empty key: disabled ; experimental mode for libc, libwolfssl...
 
 ;build_flags = -D ANY_FLAG
 ```

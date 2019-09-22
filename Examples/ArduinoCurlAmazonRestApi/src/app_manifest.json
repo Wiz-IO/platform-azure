@@ -1,0 +1,13 @@
+{
+    "Name": "", 
+    "Capabilities": {
+        "Uart": [ "$AVNET_AESMS_ISU0_UART" ], 
+        "AllowedConnections": [ "YOUR-HTTPS.amazonaws.com" ], 
+        "SystemTime": true, 
+        "WifiConfig": true
+    }, 
+    "CmdArgs": [], 
+    "EntryPoint": "", 
+    "SchemaVersion": 1, 
+    "ComponentId": "DELETE-THIS-FILE-FOR-NEW"
+}

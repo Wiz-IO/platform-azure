@@ -40,6 +40,7 @@
 * [Youtube Arduino Blink](https://www.youtube.com/watch?v=bPYGXtNt8fg)
 * [Youtube Arduino PubSub](https://www.youtube.com/watch?v=-hhSmKoT8T0)
 * [Youtube Linux](https://www.youtube.com/watch?v=tIwjUzBBPTg)
+* [Experimental Mode](https://www.youtube.com/watch?v=ucOvjfXg0-o&t=1s)
 
 ![Project](https://raw.githubusercontent.com/Wiz-IO/LIB/master/images/azuresphere.jpg) 
 

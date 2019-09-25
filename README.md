@@ -48,6 +48,7 @@
 * [Mediatek MT3620](https://www.mediatek.com/products/azureSphere/mt3620)
 * [Azure Sphere Documentation](https://docs.microsoft.com/en-us/azure-sphere/)
 * [MSDN Azure Sphere forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azuresphere)
+* [AVNET Forum](https://www.element14.com/community/community/designcenter/azure-sphere-starter-kits/content?filterID=contentstatus[published]~objecttype~objecttype[thread]&filterID=contentstatus[published]~language~language%5Bcpl%5D)
 * [AVNET Azure Sphere MT3620 Starter Kit](http://cloudconnectkits.org/product/azure-sphere-starter-kit)
 * [Element14 Azure Sphere MT3620 Starter Kit](https://www.element14.com/community/community/designcenter/azure-sphere-starter-kits/)
 * [Speed Test CoreMark 1.0](https://github.com/PaulStoffregen/CoreMark) = **1425.31** ( -Ofast )

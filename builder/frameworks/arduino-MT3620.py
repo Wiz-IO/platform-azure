@@ -8,19 +8,6 @@ from common import *
 from SCons.Script import ARGUMENTS, DefaultEnvironment, Builder
 from colorama import Fore
 
-def dev_experimental_mode(env):
-    ex = env.BoardConfig().get("build.ex_mode", "0")
-    if ex != "0": 
-        env.Append( 
-            LIBS=[
-                "_wizio_c",
-                "_wizio_wolfssl",
-            ], 
-            CPPDEFINES=[ "EX_MODE" ], 
-            CPPPATH = [ join(env.framework_dir, "Sysroots", env.sysroot, "ex", "include"),  ]
-        ) 
-        print Fore.RED + "AZURE SPHERE SDK EXPERIMENTAL MODE ENABLED"  
-
 def dev_create_template(env):
     hardwares = join(env.framework_dir, "Hardwares")
     templates = join(env.framework_dir, "Templates")

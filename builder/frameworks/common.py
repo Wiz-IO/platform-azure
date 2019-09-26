@@ -161,4 +161,16 @@ def use_original_sdk(env):
         env.tool_dir = join(env.SDK, "Tools")
         print Fore.MAGENTA + "USED", env.SDK, Fore.BLACK    
         
+def dev_experimental_mode(env):
+    ex = env.BoardConfig().get("build.ex_mode", "0")
+    if ex != "0": 
+        env.Append( 
+            LIBS = [
+                "_wizio_c",
+                "_wizio_wolfssl",
+            ], 
+            CPPDEFINES = [ "EX_MODE" ], 
+            CPPPATH = [ join(env.framework_dir, "Sysroots", env.sysroot, "ex", "include"),  ]
+        ) 
+        print Fore.RED + "AZURE SPHERE SDK EXPERIMENTAL MODE ENABLED"  
         

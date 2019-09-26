@@ -43,7 +43,7 @@ def dev_init(env, platform):
     dev_guid(env)
     dev_compiler_poky(env)
     env.sysroot = env.BoardConfig().get("build.sysroot", "2+Beta1905") # from ini file, default is max api version
-    env.delete = env.BoardConfig().get("build.delete", "current")      # from ini file, delete current OR ALL
+    env.delete = env.BoardConfig().get("build.delete", "all")          # from ini file, delete 'current' or 'all'
     core = env.BoardConfig().get("build.core")       # from board
     variant = env.BoardConfig().get("build.variant") # from board
     print Fore.MAGENTA+"AZURE SPHERE SDK SYSROOT:", env.sysroot, "[", core.upper(),"]", variant, Fore.BLACK

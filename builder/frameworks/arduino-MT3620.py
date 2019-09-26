@@ -90,7 +90,7 @@ def dev_init(env, platform):
         ], 
         LIBSOURCE_DIRS=[ join(env.framework_dir, platform, "libraries"), ], 
         LIBPATH = [ join("$PROJECT_DIR", "lib") ], # -L
-        LIBS = [ "applibs", "pthread", "gcc_s", "curl", "c"],               
+        LIBS = [ "c", "gcc_s", "applibs", "azureiot", "curl" ],               
         BUILDERS = dict(
             ElfToBin = Builder(action="", suffix=".1"),
             MakeHeader = Builder( 

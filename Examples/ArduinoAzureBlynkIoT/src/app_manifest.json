@@ -1,0 +1,17 @@
+{
+    "Name": "", 
+    "Capabilities": {
+        "Uart": [
+            "$AVNET_AESMS_ISU0_UART"
+        ], 
+        "AllowedConnections": [
+            "blynk-cloud.com"
+        ], 
+        "SystemTime": true, 
+        "WifiConfig": true
+    }, 
+    "CmdArgs": [], 
+    "EntryPoint": "", 
+    "SchemaVersion": 1, 
+    "ComponentId": "8AEA43CD-FADE-4684-87BD-8122D3539265"
+}

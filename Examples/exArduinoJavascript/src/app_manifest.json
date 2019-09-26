@@ -1,0 +1,18 @@
+{
+    "Name": "", 
+    "Capabilities": {
+        "SystemTime": true, 
+        "Uart": [
+            "$AVNET_AESMS_ISU0_UART"
+        ], 
+        "SpiMaster": [], 
+        "I2cMaster": [], 
+        "AllowedConnections": [], 
+        "Gpio": [], 
+        "WifiConfig": true
+    }, 
+    "CmdArgs": [], 
+    "EntryPoint": "", 
+    "SchemaVersion": 1, 
+    "ComponentId": "6191F825-B822-4812-9B20-4EA208E3B6A4"
+}

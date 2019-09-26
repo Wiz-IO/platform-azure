@@ -2,14 +2,7 @@
     PlatformIO - Arduino 2019 Georgi Angelov
     https://github.com/Wiz-IO
     http://www.wizio.eu/
- */
 
-#include <Arduino.h>
-#include <applibs/networking.h>
-#include <wifiClient.h>
-wifiClient cc;
-
-/* 
 Chrome - MQTTLens
     https://chrome.google.com/webstore/detail/mqttlens/hemojaaeigabkbcookmlgmdigohjobjm?hl=en
 
@@ -17,13 +10,24 @@ Eclipse
     https://iot.eclipse.org/getting-started/
 
 Nick O'Leary Library 
-    http://knolleary.net    
-*/
+    http://knolleary.net        
+ */
 
+#include <Arduino.h>
+#include <applibs/networking.h>
+#include <wifiClient.h>
+wifiClient cc;
 #include <PubSubClient.h>
-PubSubClient mqtt("iot.eclipse.org", 1883, cc); // look app_manifest.json "AllowedConnections"
 
-int led_state = 0;
+#define MQTT_PORT 1883
+#define ECLIPSE "mqtt.eclipse.org"
+//#define ECLIPSE "iot.eclipse.org"
+
+#define MQTT_PUB_PERIOD_SECONDS (30)
+#define MQTT_PUB_TOPIC "wizio/outTopic"
+#define MQTT_SUB_TOPIC "wizio/inTopic"
+
+PubSubClient mqtt(ECLIPSE, MQTT_PORT, cc); // app_manifest.json "AllowedConnections"
 
 void callback(char *topic, byte *payload, unsigned int length)
 {
@@ -36,13 +40,13 @@ void reconnect()
   {
     Serial.println("[MQTT] Connecting to Eclipse...");
     char client_id[64];
-    snprintf(client_id, 64, "WIZIO_%d", millis()); // create unique mqtt client id
+    snprintf(client_id, 64, "CLIENT_ID_%d", millis()); // create unique mqtt client id
     Serial.printf("[MQTT] ClientID: %s\n", client_id);
     if (mqtt.connect(client_id))
     {
       Serial.println("[MQTT] Connected");
-      mqtt.publish("wizio/output", "Hello world");  // PUB
-      mqtt.subscribe("wizio/input");                // SUB
+      mqtt.publish(MQTT_PUB_TOPIC, "Hello world");
+      mqtt.subscribe(MQTT_SUB_TOPIC);
     }
     else
     {
@@ -56,32 +60,42 @@ void reconnect()
 void setup()
 {
   Serial.begin(115200);
-  pinMode(LED_GREEN, OUTPUT);
-  Serial.println("\nAzure Sphere 2019 Georgi Angelov");
+  Serial.redirect(stderr); // Log_Debug
+  Log_Debug("\nAzure Sphere 2019 Georgi Angelov\n");
   Serial.println("Arduino - PubSub - PlatformIO");
-  Serial.println("Azure Sphere MT3620 Starter AES-MS-MT3620-SK-G by Avnet");
-  Serial.println("Waithing WIFI");
-  bool outIsNetworkingReady = 0;
-  /* wait wifi */
-  if (Networking_IsNetworkingReady(&outIsNetworkingReady) < 0 && 0 == outIsNetworkingReady)
-  {
-    Serial.print(".");
-    digitalWrite(LED_GREEN, led_state);
-    led_state ^= 1;
-    delay(100);
-  }
+
+  //Log_Debug("%d\n", millis());
+  waitWifi(); // ~15 seconds on board reset
+  //Log_Debug("%d\n", millis());
+
   mqtt.setCallback(callback);
+  pinMode(LED_GREEN, OUTPUT);
 }
 
 void loop()
 {
-  static int t = 0;
+  static uint32_t old = 0;
+  static uint32_t blink = 0;
+  static int led_state = 0;
+
   if (!mqtt.connected())
     reconnect();
   mqtt.loop();
-  if (0 == t % 100)
+
+  /* sending data to cloud */
+  if ((seconds() - old) > MQTT_PUB_PERIOD_SECONDS)
   {
-    digitalWrite(LED_GREEN, led_state); // blink toggle
+    char buf[256];
+    sprintf(buf, "{\"data\":\"%u\"}", millis()); // create test data
+    mqtt.publish(MQTT_PUB_TOPIC, buf);
+    Log_Debug("[MQTT] Data Sent\n");
+    old = seconds();
+  }
+
+  if ((millis() - blink) > 200)
+  {
+    digitalWrite(LED_GREEN, led_state);
     led_state ^= 1;
+    blink = millis();
   }
 }

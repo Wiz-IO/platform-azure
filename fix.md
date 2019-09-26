@@ -2,6 +2,7 @@
 * Add Linux [Experimental mode](https://github.com/Wiz-IO/platform-azure/wiki/Arduino-INI-file#experimental-mode) for libc and libwolfssl
 * Add search path for user project/lib so
 * Add some examples
+* Fix Arduino waitWifi()
 * Default delete all applications
 
 [20.09.2019]

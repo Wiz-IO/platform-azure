@@ -87,6 +87,7 @@ def dev_init(env, platform):
         ), 
         UPLOADCMD = dev_uploader
     )
+    dev_experimental_mode(env)
     libs = []    
     libs.append(
         env.BuildLibrary(

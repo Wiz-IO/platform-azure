@@ -88,7 +88,8 @@ def dev_init(env, platform):
             "-nodefaultlibs",
             "-Wl,--no-undefined", 
         ], 
-        LIBSOURCE_DIRS=[ join(env.framework_dir, platform, "libraries"), ],       
+        LIBSOURCE_DIRS=[ join(env.framework_dir, platform, "libraries"), ], 
+        LIBPATH = [ join("$PROJECT_DIR", "lib") ], # -L
         LIBS = [ "applibs", "pthread", "gcc_s", "curl", "c"],               
         BUILDERS = dict(
             ElfToBin = Builder(action="", suffix=".1"),

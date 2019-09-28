@@ -92,7 +92,7 @@ monitor_speed = 115200
 ;    copy files from project SRC to image-package, as certificates, settings, etc
 ;    path is /mnt/APP-GUID/filename ... Storage_GetAbsolutePathInImagePackage()
 
-;board_build.ex_mode = enabled ; empty key: disabled ; experimental mode for libc, libwolfssl...
+;board_build.ex_mode = enable ; empty key: disabled ; experimental mode for libc, libwolfssl...
 
 ;build_flags = -D ANY_FLAG
 ```

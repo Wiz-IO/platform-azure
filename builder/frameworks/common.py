@@ -59,6 +59,7 @@ def copy_files(env):
     list = env.BoardConfig().get("build.copy", " ").split()
     count = len(list) 
     for i in range(count):
+        print Fore.BLUE + "COPY FILE TO IMAGE", list[i] 
         copyfile(join(env.subst("$PROJECT_DIR"), "src", list[i]), 
                  join(env.subst("$BUILD_DIR"), "approot", list[i])) 
 
@@ -163,7 +164,7 @@ def use_original_sdk(env):
         
 def dev_experimental_mode(env):
     ex = join(env.framework_dir, "Sysroots", env.sysroot, "ex")
-    if env.BoardConfig().get("build.ex_mode", "0") != "0": 
+    if env.BoardConfig().get("build.ex_mode", "0") == "enable": # disabled by default
         env.Append( 
             LIBS       = [ "_wizio_c", "_wizio_wolfssl" ], 
             LIBPATH    = [ join(ex, "lib")  ],             

@@ -37,7 +37,7 @@ def dev_init(env, platform):
     dev_compiler_poky(env)
     env.sysroot = env.BoardConfig().get("build.sysroot", "2+Beta1905") # from ini file, default is max api 
     env.delete = env.BoardConfig().get("build.delete", "all")          # from ini file, delete 'current' or 'all'
-    print Fore.MAGENTA+"AZURE SPHERE SDK SYSROOT:", env.sysroot, "[",env.BoardConfig().get("build.core").upper(),"]", env.BoardConfig().get("build.variant"),Fore.BLACK
+    print( Fore.MAGENTA+"AZURE SPHERE SDK SYSROOT:", env.sysroot, "[",env.BoardConfig().get("build.core").upper(),"]", env.BoardConfig().get("build.variant"),Fore.BLACK )
     env.Append(
         CPPDEFINES = [ 
             "_POSIX_C_SOURCE",

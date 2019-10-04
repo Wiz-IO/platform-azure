@@ -33,7 +33,7 @@ def dev_init(env, platform):
     env.delete = env.BoardConfig().get("build.delete", "all")          # from ini file, delete 'current' or 'all'
     core = env.BoardConfig().get("build.core")       # from board
     variant = env.BoardConfig().get("build.variant") # from board
-    print Fore.MAGENTA+"AZURE SPHERE SDK SYSROOT:", env.sysroot, "[", core.upper(),"]", variant, Fore.BLACK
+    print( Fore.MAGENTA+"AZURE SPHERE SDK SYSROOT:", env.sysroot, "[", core.upper(),"]", variant, Fore.BLACK )
     env.Append(
         CPPDEFINES = [ 
             "_POSIX_C_SOURCE", 

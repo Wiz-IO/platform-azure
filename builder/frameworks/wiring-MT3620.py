@@ -12,7 +12,7 @@ def dev_create_template(env):
     hardwares = join(env.framework_dir, "Hardwares")
     templates = join(env.framework_dir, "Templates")
     core = env.BoardConfig().get("build.variant")
-    print "TEMPLATES", templates 
+    print( "TEMPLATES", templates )
     F = [ 
         join(templates, "main.cpp"), 
         join(templates, "app_manifest.json"),  
@@ -54,7 +54,7 @@ def dev_init(env, platform):
     env.sysroot = env.BoardConfig().get("build.sysroot", "2+Beta1905") # from ini file, default must be BETA
     env.delete = env.BoardConfig().get("build.delete", "current")      # from ini file, delete current OR ALL
     variant = env.BoardConfig().get("build.variant") # from board
-    print Fore.MAGENTA+"AZURE SPHERE SDK SYSROOT:", env.sysroot, "[",env.BoardConfig().get("build.core").upper(),"]", env.BoardConfig().get("build.variant")+Fore.BLACK
+    print( Fore.MAGENTA+"AZURE SPHERE SDK SYSROOT:", env.sysroot, "[",env.BoardConfig().get("build.core").upper(),"]", env.BoardConfig().get("build.variant")+Fore.BLACK )
     env.Append(
         CPPDEFINES = [],        
         CPPPATH = [ 

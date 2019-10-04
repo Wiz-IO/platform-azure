@@ -27,7 +27,7 @@ def execute(cmd):
     if proc.returncode == 0: COLOR = Fore.GREEN
     else: COLOR = Fore.RED
     for i in range( len(lines) ):
-        print COLOR + lines[i]
+        print( COLOR + lines[i] )
         sleep(0.1)
     if proc.returncode != 0:
         sleep(0.1)
@@ -43,11 +43,11 @@ def dev_guid(env, save = True):
                 val = UUID(data['ComponentId'], version=4)
                 NEW = False
             except ValueError:
-                print Fore.RED + "ERROR GUID ", 
+                print( Fore.RED + "ERROR GUID ", )
         if True == NEW:
             GUID = str(uuid.uuid4()).upper()
             data['ComponentId'] = GUID
-            print Fore.BLUE + "GENERATED NEW GUID", GUID, Fore.BLACK 
+            print( Fore.BLUE + "GENERATED NEW GUID", GUID, Fore.BLACK )
         if True == save:
             f.seek(0)
             json.dump(data, f, indent=4) 
@@ -59,7 +59,7 @@ def copy_files(env):
     list = env.BoardConfig().get("build.copy", " ").split()
     count = len(list) 
     for i in range(count):
-        print Fore.BLUE + "COPY FILE TO IMAGE", list[i] 
+        print( Fore.BLUE + "COPY FILE TO IMAGE", list[i] )
         copyfile(join(env.subst("$PROJECT_DIR"), "src", list[i]), 
                  join(env.subst("$BUILD_DIR"), "approot", list[i])) 
 
@@ -68,7 +68,7 @@ def dev_copy_json(env):
     PROJECT_DIR = env.subst("$PROJECT_DIR")    
     APP_MANIFEST = join(env.subst("$BUILD_DIR"), "approot", "app_manifest.json")
     copyfile(join(PROJECT_DIR, "src", "app_manifest.json"), APP_MANIFEST)
-    print Fore.BLUE + 'COMPONENT ID ', dev_guid(env, False), Fore.BLACK
+    print( Fore.BLUE + 'COMPONENT ID ', dev_guid(env, False), Fore.BLACK )
     with open(APP_MANIFEST, 'r+') as f:
         data = json.load(f)
         if env.baremetal == True:

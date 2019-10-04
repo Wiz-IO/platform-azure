@@ -12,7 +12,7 @@ def dev_create_template(env):
     hardwares = join(env.framework_dir, "Hardwares")
     templates = join(env.framework_dir, "Templates")
     core = env.BoardConfig().get("build.variant")
-    print "TEMPLATES", templates 
+    print( "TEMPLATES", templates )
     F = [ 
         join(templates, "main.c"), 
         join(templates, "app_manifest.json"),  

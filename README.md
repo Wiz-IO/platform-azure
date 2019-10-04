@@ -1,5 +1,5 @@
 # Azure Sphere - PlatformIO
-* **version 1.0.15** ( look here, [if there is something new](https://github.com/Wiz-IO/platform-azure/blob/master/fix.md) )
+* **version 1.0.16** ( look here, [if there is something new](https://github.com/Wiz-IO/platform-azure/blob/master/fix.md) )
 * **OS Windows 10 ( ONLY )** 
 * * Sysroot 2+Beta1905
 * * Arduino HighLevel applications
@@ -19,14 +19,14 @@
 * wifiClient
 * wifiUDP 
 * curlClient
-* ClientSecure (**NEW**)
+* ClientSecure
 * other in proggress...
 * [Examples](https://github.com/Wiz-IO/platform-azure/tree/master/Examples)
 
 **Wiring part ( Arduino for M4F core )**
 * Arduino base core
 * HardwareSerial (in progress)
-* GPIO
+* GPIO (**NEW** all gpio)
 * ADC
 
 **Linux & Baremetal parts** 

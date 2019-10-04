@@ -1,6 +1,6 @@
 [04.10.2019]
 * Python 2/3 fix print()
-* BareMetal all pins
+* Wiring baremetal add all gpio blocks
 
 [26.09.2019]
 * Add Linux [Experimental mode](https://github.com/Wiz-IO/platform-azure/wiki/Arduino-INI-file#experimental-mode) for libc and libwolfssl

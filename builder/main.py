@@ -26,7 +26,7 @@ from SCons.Script import (AlwaysBuild, Builder, COMMAND_LINE_TARGETS, Default, D
 from colorama import Fore
 
 env = DefaultEnvironment()
-print Fore.GREEN+'<<<<<<<<<<<< '+env.BoardConfig().get("name").upper()+" 2019 Georgi Angelov >>>>>>>>>>>>"+Fore.BLACK
+print( Fore.GREEN+'<<<<<<<<<<<< '+env.BoardConfig().get("name").upper()+" 2019 Georgi Angelov >>>>>>>>>>>>"+Fore.BLACK )
 
 ####################################################
 # Build executable and linkable program

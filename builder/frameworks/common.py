@@ -101,7 +101,8 @@ def dev_pack_image(target, source, env):
     cmd.append("--output")
     cmd.append( join(BUILD_DIR, "app.image") ) 
     cmd.append("--sysroot")
-    cmd.append( env.sysroot )
+    cmd.append( '2' ) # workaround
+    #cmd.append( env.sysroot )
     #cmd.append("--verbose")
     if env.baremetal == False:
         cmd.append("--hardwaredefinition")
@@ -129,6 +130,7 @@ def dev_uploader(target, source, env):
     cmd.append("deploy")
     cmd.append("--imagepackage")
     cmd.append(join(env.subst("$BUILD_DIR"), "app.image"))
+    #cmd.append("--verbose")
     rc = execute(cmd)
     if (0 == rc):
         print( Fore.CYAN + 'NEW APPLICATION IS READY' )

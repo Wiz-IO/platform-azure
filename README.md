@@ -1,7 +1,7 @@
 # Azure Sphere - PlatformIO
 * **Python 2 & 3 compatable in process, if issue - report**
 * **version 1.0.16** ( look here, [if there is something new](https://github.com/Wiz-IO/platform-azure/blob/master/fix.md) )
-* OS Windows 10 **( preferably )** ... tested on Windows 7 and 8 too
+* OS Windows 10 **( preferably )** ... Tested on [Windows 7, 8, 10](https://github.com/Wiz-IO/platform-azure/wiki/Install-Notes#azure-sphere-device-communication-service-manually)
 * * Sysroot 2+Beta1905
 * * Arduino HighLevel applications
 * * Linux HighLevel applications

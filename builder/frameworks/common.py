@@ -96,16 +96,16 @@ def dev_pack_image(target, source, env):
     cmd.append( join(env.tool_dir, "azsphere") ) 
     cmd.append("image")
     cmd.append("package-application")
-    cmd.append("--input")
+    cmd.append("-i")
     cmd.append( APPROOT_DIR ) 
-    cmd.append("--output")
+    cmd.append("-o")
     cmd.append( join(BUILD_DIR, "app.image") ) 
-    cmd.append("--sysroot")
+    cmd.append("-s")
     cmd.append( '2' ) # workaround
     #cmd.append( env.sysroot )
-    #cmd.append("--verbose")
+    #cmd.append("-v")
     if env.baremetal == False:
-        cmd.append("--hardwaredefinition")
+        cmd.append("-h")
         cmd.append( join(env.framework_dir, "Hardwares", "json", env.BoardConfig().get("build.variant") + ".json" ) )
     return execute(cmd)        
 

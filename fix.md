@@ -1,3 +1,7 @@
+[14.10.2019]
+* Fix all builders
+* Add Sysroot 3+Beta1909
+
 [10.10.2019]
 * [Workaround beta upload](https://github.com/Wiz-IO/platform-azure/blob/master/builder/frameworks/common.py#L104)
 

@@ -86,9 +86,8 @@ monitor_port = COM6
 monitor_speed = 115200
 
 ;board_build.sdk = C:/Program Files (x86)/Microsoft Azure Sphere SDK ; path to ...
-;board_build.sysroot = 2+Beta1806  ; default is max version, 2+Beta1905
-;board_build.delete = all ; default is all applications, or =current 
-;board_build.use_sdk = 0  ; default is USE installed if exist, 0 = use PIO
+;board_build.sysroot = 2+Beta1806  ; default is max version, 3+Beta1909
+;board_build.delete = all ; default is all applications, or = current 
 
 ;board_build.copy =  filename.1 filename.2 
 ;    copy files from project SRC to image-package, as certificates, settings, etc

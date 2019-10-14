@@ -9,7 +9,7 @@
 * * Wiring Cortex-M4 ( is "cut out" Arduino, [in progress...](https://www.youtube.com/watch?v=bdG8GsRaUSA) ) 
 * [Full API](https://github.com/Wiz-IO/platform-azure/wiki/How-to-unlock-all-API-s) (**NEW**)
 * [Experimental mode](https://github.com/Wiz-IO/platform-azure/wiki/Arduino-INI-file#experimental-mode) for libc and libwolfssl (**NEW** beta in process) 
-* It is very beta version - **[may be bugs yet](https://github.com/Wiz-IO/framework-azure)** 
+* It is very beta version - **may be bugs yet** 
 
 **Arduino part**
 * Arduino base core ( sources from last Arduino IDE )

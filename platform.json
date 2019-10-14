@@ -2,7 +2,7 @@
   "name": "azure",
   "title": "Azure Sphere",
   "description": "Azure Sphere Development PlatformIO 2019 Georgi Angelov",
-  "url": "https://github.com/Wiz-IO",
+  "url": "https://github.com/Wiz-IO/platform-azure",
   "homepage": "http://www.wizio.eu/",
   "license": "Apache-2.0",
   "engines": { "platformio": "^3.0.0" },
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/Wiz-IO/platform-azure.git"
   },
-  "version": "1.0.0",
+  "version": "2.0.0",
   "packageRepositories": [
     "https://dl.bintray.com/platformio/dl-packages/manifest.json",
     "http://dl.platformio.org/packages/manifest.json"
@@ -41,7 +41,7 @@
     "toolchain-arm-poky-linux-musleabi-hf": {
       "type": "toolchain",
       "version": "http://wizio.eu/azure/toolchain-arm-poky-linux-musleabi-hf-1.0.0.zip"
-    },
+    },    
     "toolchain-gccarmnoneeabi": {
       "type": "toolchain",
       "version": "=1.70201.0"

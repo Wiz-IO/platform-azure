@@ -1,7 +1,7 @@
 
 # WizIO 2018 Georgi Angelov
 # http://www.wizio.eu/
-# https://github.com/Wiz-IO
+# https://github.com/Wiz-IO/platform-azure
 
 from SCons.Script import DefaultEnvironment
 

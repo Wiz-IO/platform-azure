@@ -15,29 +15,21 @@
 ##########################################################################
 # Autor: WizIO 2018 Georgi Angelov
 #   http://www.wizio.eu/
-#   https://github.com/Wiz-IO
+#   https://github.com/Wiz-IO/platform-azure
 # 
 # Support: Comet Electronics 
 #   https://www.comet.bg/?cid=92
 ##########################################################################
 
 from os.path import join
-from SCons.Script import (AlwaysBuild, Builder, COMMAND_LINE_TARGETS, Default, DefaultEnvironment)
+from SCons.Script import (AlwaysBuild, Default, DefaultEnvironment)
 from colorama import Fore
 
 env = DefaultEnvironment()
-print( Fore.GREEN+'<<<<<<<<<<<< '+env.BoardConfig().get("name").upper()+" 2019 Georgi Angelov >>>>>>>>>>>>"+Fore.BLACK )
-
-####################################################
-# Build executable and linkable program
-####################################################
-
+print( Fore.GREEN + '<<<<<<<<<<<< ' + env.BoardConfig().get("name").upper() + " 2019 Georgi Angelov >>>>>>>>>>>>" + Fore.BLACK )
 elf = env.BuildProgram()
-src = env.MakeHeader( join("$BUILD_DIR", "${PROGNAME}"), env.ElfToBin(join("$BUILD_DIR", "${PROGNAME}"), elf) )
+src = env.PackImage( join("$BUILD_DIR", "${PROGNAME}"), elf ) 
 AlwaysBuild( src )
-upload = env.Alias("upload", src, [ 
-    env.VerboseAction("$UPLOADCMD", "\n"), 
-    env.VerboseAction("", "\n")
-])
+upload = env.Alias("upload", src, [ env.VerboseAction("$UPLOADCMD", "\n"), env.VerboseAction("", "\n") ] )
 AlwaysBuild( upload )    
 Default( src )

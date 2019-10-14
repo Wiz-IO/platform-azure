@@ -1,8 +1,8 @@
 # Azure Sphere - PlatformIO
-* **Sysroot 3+1909 and version 2.0.0 in process...soon**
-* **version 1.0.16** ( look here, [if there is something new](https://github.com/Wiz-IO/platform-azure/blob/master/fix.md) )
+* **Version 2.0.0** ( look here, [if there is something new](https://github.com/Wiz-IO/platform-azure/blob/master/fix.md) )
 * OS Windows 10 **( preferably )** ... Tested on [Windows 7, 8, 10](https://github.com/Wiz-IO/platform-azure/wiki/Install-Notes#azure-sphere-device-communication-service-manually)
 * * Sysroot 2+Beta1905
+* * Sysroot 3+Beta1909 ( NEW )
 * * Arduino HighLevel applications
 * * Linux HighLevel applications
 * * Baremetal Cortex-M4 applications  

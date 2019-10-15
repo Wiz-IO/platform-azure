@@ -10,7 +10,7 @@ def dev_init(env, platform):
     dev_create_template(env, [ "main.cpp", "app_manifest.json" ])
     dev_initialize(env, True)
     env.Append(
-        CPPDEFINES = [],        
+        CPPDEFINES = [ "{}=200".format(platform.upper()) ],        
         CPPPATH = [ 
             join(env.framework_dir,  platform, platform),
             join(env.framework_dir,  platform, "core"),

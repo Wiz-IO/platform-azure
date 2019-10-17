@@ -66,8 +66,11 @@ PlatformIO - Home - Platforms - Advanced Installation
 Paste link: https://github.com/Wiz-IO/platform-azure 
 
 ## Fast Uninstal
-* goto C:\Users\USER_NAME\.platformio\platforms **delete** folder **azure**
-* goto C:\Users\USER_NAME\.platformio\packages **delete** folder **framework-azure**
+* goto C:\Users\USER_NAME\.platformio\platforms **delete** folder **azure** ( builders )
+* goto C:\Users\USER_NAME\.platformio\packages **delete** folder **framework-azure** ( sources )
+* goto C:\Users\USER_NAME\.platformio\packages **delete** folder **tool-azure** ( azsphere )
+* goto C:\Users\USER_NAME\.platformio\packages **delete** folder **toolchain-arm-poky-linux-musleabi-hf** (compiler )
+
 
 ## New Project - PlatformIO
 

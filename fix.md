@@ -5,7 +5,7 @@
 * Support installed Microsoft SDK
 
 [10.10.2019]
-* [Workaround beta upload](https://github.com/Wiz-IO/platform-azure/blob/master/builder/frameworks/common.py#L104)
+* Workaround beta upload (fixed in 2.x.x)
 
 [04.10.2019]
 * Python 2/3 fix print()

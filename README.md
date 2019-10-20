@@ -102,8 +102,6 @@ monitor_speed = 115200
 ;build_flags = -D ANY_FLAG
 ```
 
-Build, Upload ... if uploader work ( tested on Windows 10 ) - nice ... enjoy
-
 ## Manual upload
 
 **azsphere device sideload delete** delete all or current -> **-i GUID**

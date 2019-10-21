@@ -1,7 +1,8 @@
 # Azure Sphere - PlatformIO
 
-**Microsoft does not recommend this solution.  This will void Microsoft app compat assurances and may have other unintended side effects. Microsoft will not provide technical support on a project that is using this published solution.**
-_António Sérgio Azevedo - MSFTMicrosoft** employee, Moderator MSDN_
+**Microsoft does not recommend this solution. This will void Microsoft app compat assurances and may have other unintended side effects. Microsoft will not provide technical support on a project that is using this published solution.**
+_António Sérgio Azevedo - MSFTMicrosoft employee, Moderator MSDN_
+
 
 * **Version 2.0.1** ( look here, [if there is something new](https://github.com/Wiz-IO/platform-azure/blob/master/fix.md) )
 * OS Windows 10 **( preferably )** ... Tested on [Windows 8, 10](https://github.com/Wiz-IO/platform-azure/wiki/Install-Notes#azure-sphere-device-communication-service-manually)

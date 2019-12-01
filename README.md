@@ -108,12 +108,7 @@ monitor_speed = 115200
 ;build_flags = -D ANY_FLAG
 ```
 
-## Manual upload
-
-**azsphere device sideload delete** delete all or current -> **-i GUID**
-
-**azsphere device sideload deploy --imagepackage PATH-TO-PROJECT\NAME\.pio\build\VARIANT\app.image**
-
+## [Manual upload](https://docs.microsoft.com/en-us/azure-sphere/app-development/manual-build#deploy-the-application)
 
 
 ## Thanks to:

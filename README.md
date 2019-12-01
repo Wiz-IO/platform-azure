@@ -70,10 +70,12 @@ Paste link: https://github.com/Wiz-IO/platform-azure
 [**SDK 19.10 workaroud**](https://github.com/Wiz-IO/platform-azure/wiki/Install-Notes#sdk-1910-workaroud)
 
 ## Fast Uninstal
-* goto C:\Users\USER_NAME\.platformio\platforms **delete** folder **azure** ( builders )
-* goto C:\Users\USER_NAME\.platformio\packages **delete** folder **framework-azure** ( sources )
-* goto C:\Users\USER_NAME\.platformio\packages **delete** folder **tool-azure** ( azsphere )
-* goto C:\Users\USER_NAME\.platformio\packages **delete** folder **toolchain-arm-poky-linux-musleabi-hf** (compiler )
+
+goto C:\Users\USER_NAME\.platformio\platforms 
+* **delete** folder **azure** ( builders )
+* **delete** folder **framework-azure** ( sources )
+* **delete** folder **tool-azure** ( azsphere )
+* **delete** folder **toolchain-arm-poky-linux-musleabi-hf** (compiler )
 
 
 ## New Project - PlatformIO

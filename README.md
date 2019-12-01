@@ -59,8 +59,6 @@
 
 ## [INSTALL NOTES - READ](https://github.com/Wiz-IO/platform-azure/wiki/Install-Notes)
 
-[**SDK 19.10 workaroud**](https://github.com/Wiz-IO/platform-azure/wiki/Install-Notes#sdk-1910-workaroud)
-
 ## Platform Installation
 
 Install VS Code + PlatformIO
@@ -68,6 +66,8 @@ Install VS Code + PlatformIO
 PlatformIO - Home - Platforms - Advanced Installation
 
 Paste link: https://github.com/Wiz-IO/platform-azure 
+
+[**SDK 19.10 workaroud**](https://github.com/Wiz-IO/platform-azure/wiki/Install-Notes#sdk-1910-workaroud)
 
 ## Fast Uninstal
 * goto C:\Users\USER_NAME\.platformio\platforms **delete** folder **azure** ( builders )

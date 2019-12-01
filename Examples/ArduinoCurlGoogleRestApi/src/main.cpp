@@ -10,7 +10,7 @@
 #include <curlClient.h>
 #include <CloudIoTCore.h>
 #include <jwt.h>
-CloudIoTCoreDevice goo(GOOGLE_PROJECT, GOOGLE_LOCATION, GOOGLE_REGISTRY, GOOGLE_DEVICE, GOOGLE_PRIVATE_KEY);
+CloudIoTCoreDevice goo(GOOGLE_PROJECT, GOOGLE_LOCATION, GOOGLE_REGISTRY, GOOGLE_DEVICE, PRIVATE_KEY);
 curlClient client;
 
 void send(int port, const char *url, const char *message)

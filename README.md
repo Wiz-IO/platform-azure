@@ -59,6 +59,8 @@
 
 ## [INSTALL NOTES - READ](https://github.com/Wiz-IO/platform-azure/wiki/Install-Notes)
 
+[**SDK 19.10 workaroud**] (https://github.com/Wiz-IO/platform-azure/wiki/Install-Notes#sdk-1910-workaroud)
+
 ## Platform Installation
 
 Install VS Code + PlatformIO

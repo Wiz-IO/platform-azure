@@ -61,7 +61,8 @@ def copy_files(env):
     list = env.BoardConfig().get("build.copy", " ").split()
     count = len(list) 
     for i in range(count):
-        print( Fore.BLUE + "COPY FILE TO IMAGE", list[i] )
+        print( Fore.BLUE + "COPY TO IMAGE:" )
+        print( list[i] )
         copyfile(join(env.subst("$PROJECT_DIR"), "src", list[i]), 
                  join(env.subst("$BUILD_DIR"), "approot", list[i])) 
 

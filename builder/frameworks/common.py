@@ -97,8 +97,8 @@ def dev_image_pack(target, source, env):
     cmd = []
     dst = join(BUILD_DIR, "app_manifest.json")
     cmd.append( join(env.tool_dir, "azsphere") ) 
-    cmd.append("image")
-    cmd.append("package-application")
+    cmd.append("image")                 # image-package     SDK 19.10
+    cmd.append("package-application")   # pack-application  SDK 19.10
     cmd.append("-i")
     cmd.append( APPROOT_DIR ) 
     cmd.append("-o")

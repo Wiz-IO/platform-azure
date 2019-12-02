@@ -17,7 +17,7 @@
       }
     }
   },  
-  "frameworks": ["linux", "arduino", "baremetal", "wiring"],
+  "frameworks": ["linux", "arduino", "mediatek", "baremetal", "wiring"],
   "vendor": "AVNET",
   "upload": {
         "maximum_ram_size": 262144,

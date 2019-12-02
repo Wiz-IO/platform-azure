@@ -33,7 +33,7 @@
 * GPIO (**NEW** all gpio)
 * ADC
 
-**Mediatek parts** 
+**Mediatek part ( M4 )** 
 * As original [SDK](https://github.com/MediaTek-Labs/mt3620_m4_software)
 * [Documentation](https://support.mediatek.com/AzureSphere/mt3620/M4_API_Reference_Manual/)
 * Example [Hello World]()

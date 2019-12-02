@@ -7,6 +7,7 @@
 * * Sysroot 2+Beta1905
 * * Arduino HighLevel applications
 * * Linux HighLevel applications
+* * Mediatek Cortex-M4 applications 
 * * Baremetal Cortex-M4 applications  
 * * Wiring Cortex-M4 ( is "cut out" Arduino, [in progress...](https://www.youtube.com/watch?v=bdG8GsRaUSA) ) 
 * [Full API](https://github.com/Wiz-IO/platform-azure/wiki/How-to-unlock-all-API-s) (**NEW**)
@@ -31,6 +32,11 @@
 * HardwareSerial (in progress)
 * GPIO (**NEW** all gpio)
 * ADC
+
+**Mediatek parts** 
+* As original [SDK](https://github.com/MediaTek-Labs/mt3620_m4_software)
+* [Documentation](https://support.mediatek.com/AzureSphere/mt3620/M4_API_Reference_Manual/)
+* Example [Hello World]()
 
 **Linux & Baremetal parts** 
 * As original [SDK](https://docs.microsoft.com/en-us/azure-sphere/) 

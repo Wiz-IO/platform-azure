@@ -7,7 +7,6 @@ from common import *
 from SCons.Script import Builder
 
 def dev_init(env, platform):
-    print(env.get("PIOFRAMEWORK")[0])
     dev_create_template(env, [ "mediatek.c", "app_manifest.json" ])
     dev_initialize(env, True)
     env.Append(

@@ -172,10 +172,10 @@ def dev_compiler_none(env):
         RANLIB="arm-none-eabi-ranlib",
         SIZETOOL="arm-none-eabi-size",
         ARFLAGS=["rc"],
-        SIZEPROGREGEXP=r"^(?:/.text|/.data|/.bootloader)/s+(/d+).*",
-        SIZEDATAREGEXP=r"^(?:/.data|/.bss|/.noinit)/s+(/d+).*",
+        SIZEPROGREGEXP=r"^(?:\.text|\.data|\.rodata|\.text.align|\.ARM.exidx)\s+(\d+).*",
+        SIZEDATAREGEXP=r"^(?:\.data|\.bss|\.noinit)\s+(\d+).*",
         SIZECHECKCMD="$SIZETOOL -A -d $SOURCES",
-        SIZEPRINTCMD='$SIZETOOL --mcu=$BOARD_MCU -C -d $SOURCES',
+        SIZEPRINTCMD='$SIZETOOL -B -d $SOURCES',
         PROGNAME="app",
         PROGSUFFIX=".elf",  
     )
@@ -215,8 +215,12 @@ def dev_initialize(env, bare = True):
     dev_guid(env)
     if bare: 
         dev_compiler_none(env)
-        print( Fore.MAGENTA + "AZURE SPHERE SDK CORTEX M4 BAREMETAL " + \
-            env.sysroot + " [ " + env.BoardConfig().get("build.variant").upper() + " ] " ) 
+        if env.get("PIOFRAMEWORK")[0] == 'mediatek':
+            print( Fore.MAGENTA + "AZURE SPHERE MEDIATEK CORTEX M4 " + \
+                env.sysroot + " [ " + env.BoardConfig().get("build.variant").upper() + " ] " ) 
+        else:
+            print( Fore.MAGENTA + "AZURE SPHERE SDK CORTEX M4 BAREMETAL " + \
+                env.sysroot + " [ " + env.BoardConfig().get("build.variant").upper() + " ] " )             
     else:
         env.toolchain_dir = env.PioPlatform().get_package_dir("toolchain-arm-poky-linux-musleabi-hf")
         dev_compiler_poky(env)

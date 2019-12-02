@@ -1,3 +1,6 @@
+[02.12.2019]
+* Add new framework for M4: [mediatek](https://github.com/MediaTek-Labs/mt3620_m4_software)
+
 [14.10.2019]
 * Fix all builders
 * Add Sysroot 3+Beta1909

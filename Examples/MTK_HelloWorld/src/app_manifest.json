@@ -1,0 +1,17 @@
+{
+    "Name": "", 
+    "Capabilities": {
+        "Uart": [
+            "ISU0"
+        ], 
+        "Gpio": [
+            8, 
+            9, 
+            10
+        ]
+    }, 
+    "CmdArgs": [], 
+    "EntryPoint": "", 
+    "SchemaVersion": 1, 
+    "ComponentId": "0FC2878F-B09E-40A1-BE3C-AA952ACA3BE7"
+}

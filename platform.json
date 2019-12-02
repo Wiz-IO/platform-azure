@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/Wiz-IO/platform-azure.git"
   },
-  "version": "2.0.0",
+  "version": "2.0.2",
   "packageRepositories": [
     "https://dl.bintray.com/platformio/dl-packages/manifest.json",
     "http://dl.platformio.org/packages/manifest.json"
@@ -28,6 +28,10 @@
         "package": "framework-azure",
         "script": "builder/frameworks/baremetal.py"
       },
+      "mediatek": {
+        "package": "framework-azure",
+        "script": "builder/frameworks/mediatek.py"
+      },      
       "wiring": {
         "package": "framework-azure",
         "script": "builder/frameworks/wiring.py"

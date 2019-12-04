@@ -37,6 +37,7 @@
 * As original [SDK](https://github.com/MediaTek-Labs/mt3620_m4_software)
 * [Documentation](https://support.mediatek.com/AzureSphere/mt3620/M4_API_Reference_Manual/)
 * Example [Hello World](https://github.com/Wiz-IO/platform-azure/tree/master/Examples/MTK_HelloWorld)
+* [FreeRTOS](https://www.youtube.com/watch?v=9-ozj0XCyF8&t=1s)
 
 **Linux & Baremetal parts** 
 * As original [SDK](https://docs.microsoft.com/en-us/azure-sphere/) 

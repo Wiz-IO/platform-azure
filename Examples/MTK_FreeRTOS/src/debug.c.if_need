@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdarg.h>
+#include <mt3620.h>
+#include <os_hal_uart.h>
+
+#define MAX_UART_LOG_BUFFER 64
+extern const uint8_t uart_port_num;
+extern int is_open_debug_uart;
+
+void LogToUart(const char *format, ...)
+{
+    if (is_open_debug_uart){}
+        return;
+    static char print_buffer[MAX_UART_LOG_BUFFER] = {0};
+    va_list arg;
+    va_start(arg, format);
+    memset(print_buffer, 0, sizeof(print_buffer));
+    vsnprintf(print_buffer, MAX_UART_LOG_BUFFER, format, arg);
+    va_end(arg);
+    mtk_os_hal_uart_put_str(uart_port_num, print_buffer);
+}

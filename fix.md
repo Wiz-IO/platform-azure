@@ -1,3 +1,8 @@
+[06.12.2019]
+* Fix Mediatek SDK - printf()
+* Add M4F FreeRTOS - last version
+* [Example M4F MTK_FreeRTOS](https://github.com/Wiz-IO/platform-azure/tree/master/Examples/MTK_FreeRTOS)
+
 [02.12.2019]
 * Add new framework for M4: [mediatek](https://github.com/MediaTek-Labs/mt3620_m4_software)
 

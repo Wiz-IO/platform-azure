@@ -75,7 +75,7 @@ PlatformIO - Home - Platforms - Advanced Installation
 
 Paste link: https://github.com/Wiz-IO/platform-azure 
 
-[**SDK 19.10 workaroud**](https://github.com/Wiz-IO/platform-azure/wiki/Install-Notes#sdk-1910-workaroud)
+[**SDK 19.10/11 workaroud**](https://github.com/Wiz-IO/platform-azure/wiki/Install-Notes#sdk-1910-workaroud)
 
 ## Fast Uninstal
 

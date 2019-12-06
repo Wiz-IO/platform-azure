@@ -38,7 +38,7 @@
 * [Documentation](https://support.mediatek.com/AzureSphere/mt3620/M4_API_Reference_Manual/)
 * [FreeRTOS @ youtube](https://www.youtube.com/watch?v=9-ozj0XCyF8&t=1s)
 * Example [Hello World](https://github.com/Wiz-IO/platform-azure/tree/master/Examples/MTK_HelloWorld)
-* [Example M4F MTK_FreeRTOS](https://github.com/Wiz-IO/platform-azure/tree/master/Examples/MTK_FreeRTOS)
+* Example [FreeRTOS](https://github.com/Wiz-IO/platform-azure/tree/master/Examples/MTK_FreeRTOS)
 
 **Linux & Baremetal parts** 
 * As original [SDK](https://docs.microsoft.com/en-us/azure-sphere/) 

@@ -1,7 +1,7 @@
 # Azure Sphere - PlatformIO
 
 
-* **Version 2.0.3** ( look here, [if there is something new](https://github.com/Wiz-IO/platform-azure/blob/master/fix.md) )
+* **Version 2.0.4** ( look here, [if there is something new](https://github.com/Wiz-IO/platform-azure/blob/master/fix.md) )
 * OS Windows 10 **( preferably )** 
 * * Sysroot 3+Beta1909
 * * Sysroot 2+Beta1905

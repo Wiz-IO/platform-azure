@@ -122,6 +122,7 @@ monitor_speed = 115200
 ## Thanks to:
 * [Ivan Kravets ( PlatformIO )](https://platformio.org/)
 * [Comet electronics](https://www.comet.bg/?cid=111)
+* [thepenguinmaster](https://github.com/thepenguinmaster)
 * Roberto del Campo
 * Junxiao Shi
 
